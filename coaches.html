@@ -51,9 +51,32 @@
   footer h2 { color: #fff; font-size: 1.1rem; margin-bottom: 0.6rem; }
   footer p { margin-bottom: 0.4rem; }
   footer a { color: #9dbede; }
+
+  /* Password gate */
+  body.locked > *:not(.gate) { display: none !important; }
+  .gate { position: fixed; inset: 0; z-index: 9999; background: #0d2c52; color: #fff;
+    display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .gate-card { max-width: 380px; width: 100%; text-align: center; }
+  .gate-card h2 { margin: 0 0 8px; font-size: 1.5rem; }
+  .gate-card p { margin: 0 0 18px; color: #cfe0f4; }
+  .gate-card input { width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 1rem;
+    border-radius: 8px; border: 1px solid #7fa6d9; margin-bottom: 10px; }
+  .gate-card button { width: 100%; padding: 12px 14px; font-size: 1rem; font-weight: 700;
+    border: 0; border-radius: 8px; background: #2B59A7; color: #fff; cursor: pointer; }
+  .gate-err { color: #ffb3b3; min-height: 1.2em; margin-top: 10px; font-size: .95rem; }
 </style>
 </head>
-<body>
+<body class="locked">
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <h2>Ventura Surf Coaches Hub</h2>
+    <p>Coaches only. Enter the coaches password to continue.</p>
+    <input type="password" id="gatePw" placeholder="Password" autocomplete="current-password">
+    <button id="gateBtn" type="button">Enter</button>
+    <div class="gate-err" id="gateErr"></div>
+  </div>
+</div>
+
 
 <nav class="site-nav">
   <span class="brand">Ventura Surf</span>
@@ -186,5 +209,33 @@
   </div>
 </footer>
 
+
+<script>
+(function () {
+  var HASH = "33c6987074d92557207c614336a6f3aeaf781f8f415e4da8bc21f932d86354d2", KEY = "vs_coaches_gate";
+  function unlock() {
+    document.body.classList.remove("locked");
+    var g = document.getElementById("gate");
+    if (g) g.style.display = "none";
+  }
+  try { if (localStorage.getItem(KEY) === "1") { unlock(); return; } } catch (e) {}
+  async function sha256(text) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  async function tryPw() {
+    var v = document.getElementById("gatePw").value;
+    var h = await sha256(v);
+    if (h === HASH) {
+      try { localStorage.setItem(KEY, "1"); } catch (e) {}
+      unlock();
+    } else {
+      document.getElementById("gateErr").textContent = "Incorrect password — try again.";
+    }
+  }
+  document.getElementById("gateBtn").addEventListener("click", tryPw);
+  document.getElementById("gatePw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPw(); });
+})();
+</script>
 </body>
 </html>
