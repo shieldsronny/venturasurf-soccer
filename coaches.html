@@ -6,53 +6,53 @@
 <title>VENTURA SURF – Coaches Hub</title>
 <meta name="description" content="Ventura Surf Coaches Hub — this week's coaching focus, curriculum, session plans, and coaching tools. Coaches only.">
 <style>
-  :root { --gold: #C9A227; --gold-dark: #8a6d1f; --dark: #0b0b0b; }
+  :root { --surf-blue: #2B59A7; --dark: #0b0b0b; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
+  body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1c2b3a; line-height: 1.6; }
   .site-nav { background: var(--dark); display: flex; align-items: center; justify-content: space-between;
-              flex-wrap: wrap; padding: 0.7rem 1.2rem; border-bottom: 3px solid var(--gold); }
+              flex-wrap: wrap; padding: 0.7rem 1.2rem; border-bottom: 3px solid var(--surf-blue); }
   .site-nav .brand-wrap { display: flex; align-items: center; gap: 0.6rem; }
   .site-nav .nav-shield { height: 46px; width: auto; display: block; }
   .site-nav .brand { color: #fff; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
   .site-nav .tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-  .site-nav .tabs a { color: #e6e6e6; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
+  .site-nav .tabs a { color: #cfdce9; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
                       font-size: 0.92rem; font-weight: 600; }
-  .site-nav .tabs a:hover { background: #2a2a2a; color: #fff; }
-  .site-nav .tabs a.active { background: var(--gold); color: #111; }
+  .site-nav .tabs a:hover { background: #1a3355; color: #fff; }
+  .site-nav .tabs a.active { background: var(--surf-blue); color: #fff; }
   header.hero { position: relative; text-align: center; color: #fff; }
   header.hero img.banner { width: 100%; height: auto; display: block; }
   .hero-text { background: var(--dark); padding: 2.2rem 1rem 2.4rem; }
   .hero-text img.logo { width: 120px; height: 120px; }
   .hero-text h1 { font-size: 1.9rem; margin: 0.8rem auto 0.6rem; max-width: 820px; }
-  .hero-text p { max-width: 720px; margin: 0 auto; color: #e6e6e6; }
+  .hero-text p { max-width: 720px; margin: 0 auto; color: #cfdce9; }
   section { max-width: 860px; margin: 0 auto; padding: 2.4rem 1.2rem; }
-  section h2 { color: var(--gold-dark); font-size: 1.35rem; margin-bottom: 0.8rem;
+  section h2 { color: var(--surf-blue); font-size: 1.35rem; margin-bottom: 0.8rem;
                text-transform: uppercase; letter-spacing: 0.05em; }
   section p { margin-bottom: 1rem; }
   section li { margin-left: 1.2rem; margin-bottom: 0.5rem; }
   .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
              gap: 1rem; margin: 1.2rem 0; }
-  .pillar { background: #f7f2df; border-top: 4px solid var(--gold);
+  .pillar { background: #eef3fa; border-top: 4px solid var(--surf-blue);
             padding: 1rem; border-radius: 4px; }
   .pillar h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em;
-               color: var(--gold); margin-bottom: 0.3rem; }
+               color: var(--surf-blue); margin-bottom: 0.3rem; }
   .pillar p { font-size: 1.05rem; font-weight: 700; margin: 0; }
   .talking-points { background: var(--dark); color: #fff; border-radius: 6px;
                     padding: 1.4rem 1.6rem; margin: 1.2rem 0; }
-  .talking-points h3 { color: #d9b84a; text-transform: uppercase; letter-spacing: 0.06em;
+  .talking-points h3 { color: #9dbede; text-transform: uppercase; letter-spacing: 0.06em;
                        font-size: 0.9rem; margin-bottom: 0.6rem; }
   .talking-points li { margin-left: 1.2rem; margin-bottom: 0.4rem; font-size: 1.1rem; font-weight: 600; }
   .link-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                 gap: 1rem; margin: 1.2rem 0; }
-  .link-card { border: 2px solid var(--gold); border-radius: 6px; padding: 1.1rem 1.2rem; }
+  .link-card { border: 2px solid var(--surf-blue); border-radius: 6px; padding: 1.1rem 1.2rem; }
   .link-card h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
-  .link-card h3 a { color: var(--gold-dark); text-decoration: none; }
-  .link-card p { font-size: 0.92rem; margin: 0; color: #5c5546; }
-  footer { background: var(--dark); color: #e6e6e6; padding: 2.2rem 1.2rem; }
+  .link-card h3 a { color: var(--surf-blue); text-decoration: none; }
+  .link-card p { font-size: 0.92rem; margin: 0; color: #44566b; }
+  footer { background: var(--dark); color: #cfdce9; padding: 2.2rem 1.2rem; }
   footer .inner { max-width: 860px; margin: 0 auto; }
   footer h2 { color: #fff; font-size: 1.1rem; margin-bottom: 0.6rem; }
   footer p { margin-bottom: 0.4rem; }
-  footer a { color: #d9b84a; }
+  footer a { color: #9dbede; }
 
   /* Password gate */
   body.locked > *:not(.gate) { display: none !important; }
@@ -60,11 +60,11 @@
     display: flex; align-items: center; justify-content: center; padding: 20px; }
   .gate-card { max-width: 380px; width: 100%; text-align: center; }
   .gate-card h2 { margin: 0 0 8px; font-size: 1.5rem; }
-  .gate-card p { margin: 0 0 18px; color: #eadfc0; }
+  .gate-card p { margin: 0 0 18px; color: #cfe0f4; }
   .gate-card input { width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 1rem;
-    border-radius: 8px; border: 1px solid #C9A227; margin-bottom: 10px; }
+    border-radius: 8px; border: 1px solid #7fa6d9; margin-bottom: 10px; }
   .gate-card button { width: 100%; padding: 12px 14px; font-size: 1rem; font-weight: 700;
-    border: 0; border-radius: 8px; background: #C9A227; color: #111; cursor: pointer; }
+    border: 0; border-radius: 8px; background: #2B59A7; color: #fff; cursor: pointer; }
   .gate-err { color: #ffb3b3; min-height: 1.2em; margin-top: 10px; font-size: .95rem; }
 </style>
 </head>
