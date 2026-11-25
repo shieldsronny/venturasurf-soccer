@@ -6,33 +6,35 @@
 <title>VENTURA SURF – Player Hub</title>
 <meta name="description" content="Ventura Surf Player Hub — Players of the Month, the Juggle Challenge, and this week's training focus and videos.">
 <style>
-  :root { --surf-blue: #2B59A7; --dark: #10243e; }
+  :root { --gold: #C9A227; --gold-dark: #8a6d1f; --dark: #0b0b0b; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1c2b3a; line-height: 1.6; }
+  body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
   .site-nav { background: var(--dark); display: flex; align-items: center; justify-content: space-between;
-              flex-wrap: wrap; padding: 0.7rem 1.2rem; }
+              flex-wrap: wrap; padding: 0.7rem 1.2rem; border-bottom: 3px solid var(--gold); }
+  .site-nav .brand-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .site-nav .nav-shield { height: 46px; width: auto; display: block; }
   .site-nav .brand { color: #fff; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
   .site-nav .tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-  .site-nav .tabs a { color: #cfdce9; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
+  .site-nav .tabs a { color: #e6e6e6; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
                       font-size: 0.92rem; font-weight: 600; }
-  .site-nav .tabs a:hover { background: #1a3355; color: #fff; }
-  .site-nav .tabs a.active { background: var(--surf-blue); color: #fff; }
+  .site-nav .tabs a:hover { background: #2a2a2a; color: #fff; }
+  .site-nav .tabs a.active { background: var(--gold); color: #111; }
   header.hero { position: relative; text-align: center; color: #fff; }
   header.hero img.banner { width: 100%; height: auto; display: block; }
   .hero-text { background: var(--dark); padding: 2.2rem 1rem 2.4rem; }
   .hero-text img.logo { width: 120px; height: 120px; }
   .hero-text h1 { font-size: 1.9rem; margin: 0.8rem auto 0.6rem; max-width: 820px; }
-  .hero-text p { max-width: 720px; margin: 0 auto; color: #cfdce9; }
+  .hero-text p { max-width: 720px; margin: 0 auto; color: #e6e6e6; }
   section { max-width: 860px; margin: 0 auto; padding: 2.4rem 1.2rem; }
-  section h2 { color: var(--surf-blue); font-size: 1.35rem; margin-bottom: 0.8rem;
+  section h2 { color: var(--gold-dark); font-size: 1.35rem; margin-bottom: 0.8rem;
                text-transform: uppercase; letter-spacing: 0.05em; }
   section p { margin-bottom: 1rem; }
   .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
              gap: 1rem; margin: 1.2rem 0; }
-  .pillar { background: #eef3fa; border-top: 4px solid var(--surf-blue);
+  .pillar { background: #f7f2df; border-top: 4px solid var(--gold);
             padding: 1rem; border-radius: 4px; }
   .pillar h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em;
-               color: var(--surf-blue); margin-bottom: 0.3rem; }
+               color: var(--gold); margin-bottom: 0.3rem; }
   .pillar p { font-size: 1.05rem; font-weight: 700; margin: 0; }
   .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem; margin: 1.2rem 0; }
@@ -40,52 +42,52 @@
   .video p { font-size: 0.9rem; margin-top: 0.4rem; }
   .potm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                gap: 1rem; margin: 1.2rem 0; }
-  .potm-card { border: 2px solid var(--surf-blue); border-radius: 6px; padding: 1.2rem;
+  .potm-card { border: 2px solid var(--gold); border-radius: 6px; padding: 1.2rem;
                text-align: center; }
-  .potm-card .photo { width: 110px; height: 110px; border-radius: 50%; background: #eef3fa;
+  .potm-card .photo { width: 110px; height: 110px; border-radius: 50%; background: #f7f2df;
                       margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center;
-                      color: var(--surf-blue); font-size: 0.8rem; }
-  .potm-card .group { color: var(--surf-blue); font-size: 0.8rem; font-weight: 700;
+                      color: var(--gold-dark); font-size: 0.8rem; }
+  .potm-card .group { color: var(--gold-dark); font-size: 0.8rem; font-weight: 700;
                       text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
   .potm-card h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
-  .potm-card p { font-size: 0.92rem; margin: 0; color: #44566b; }
+  .potm-card p { font-size: 0.92rem; margin: 0; color: #5c5546; }
   .group-head { color: var(--dark); font-size: 1.05rem; margin: 1.4rem 0 0.2rem;
                 text-transform: uppercase; letter-spacing: 0.05em; }
-  .cta { display: inline-block; margin-top: 0.6rem; background: var(--surf-blue); color: #fff;
+  .cta { display: inline-block; margin-top: 0.6rem; background: var(--gold); color: #111;
          padding: 0.8rem 1.8rem; border-radius: 4px; text-decoration: none; font-weight: 700;
          letter-spacing: 0.04em; }
   .board { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1rem; }
-  .board th { text-align: left; background: #eef3fa; color: var(--surf-blue);
+  .board th { text-align: left; background: #f7f2df; color: var(--gold-dark);
               padding: 0.5rem 0.7rem; font-size: 0.85rem; text-transform: uppercase;
               letter-spacing: 0.05em; }
-  .board td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #dbe4ef; }
+  .board td { padding: 0.5rem 0.7rem; border-bottom: 1px solid #e7dfc6; }
   .pillars-band { background: var(--dark); max-width: none; padding: 2.6rem 1.2rem; }
   .pillars-inner { max-width: 860px; margin: 0 auto; }
   .pillars-band h2 { color: #fff; }
-  .pillars-band > .pillars-inner > p { color: #cfdce9; }
+  .pillars-band > .pillars-inner > p { color: #e6e6e6; }
   .pillar-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                   gap: 1rem; margin-top: 1.2rem; }
-  .pillar-card { background: #1a3355; border-top: 4px solid #9dbede; border-radius: 4px; padding: 1rem; }
+  .pillar-card { background: #2a2a2a; border-top: 4px solid #d9b84a; border-radius: 4px; padding: 1rem; }
   .pillar-card h3 { color: #fff; text-transform: uppercase; letter-spacing: 0.06em;
                     font-size: 0.95rem; margin-bottom: 0.4rem; }
-  .pillar-card p { color: #cfdce9; font-size: 0.95rem; margin: 0; }
-  footer { background: var(--dark); color: #cfdce9; padding: 2.2rem 1.2rem; }
+  .pillar-card p { color: #e6e6e6; font-size: 0.95rem; margin: 0; }
+  footer { background: var(--dark); color: #e6e6e6; padding: 2.2rem 1.2rem; }
   footer .inner { max-width: 860px; margin: 0 auto; }
   footer h2 { color: #fff; font-size: 1.1rem; margin-bottom: 0.6rem; }
   footer p { margin-bottom: 0.4rem; }
-  footer a { color: #9dbede; }
+  footer a { color: #d9b84a; }
 
   /* Password gate */
   body.locked > *:not(.gate) { display: none !important; }
-  .gate { position: fixed; inset: 0; z-index: 9999; background: #0d2c52; color: #fff;
+  .gate { position: fixed; inset: 0; z-index: 9999; background: #0b0b0b; color: #fff;
     display: flex; align-items: center; justify-content: center; padding: 20px; }
   .gate-card { max-width: 380px; width: 100%; text-align: center; }
   .gate-card h2 { margin: 0 0 8px; font-size: 1.5rem; }
-  .gate-card p { margin: 0 0 18px; color: #cfe0f4; }
+  .gate-card p { margin: 0 0 18px; color: #eadfc0; }
   .gate-card input { width: 100%; box-sizing: border-box; padding: 12px 14px; font-size: 1rem;
-    border-radius: 8px; border: 1px solid #7fa6d9; margin-bottom: 10px; }
+    border-radius: 8px; border: 1px solid #C9A227; margin-bottom: 10px; }
   .gate-card button { width: 100%; padding: 12px 14px; font-size: 1rem; font-weight: 700;
-    border: 0; border-radius: 8px; background: #2B59A7; color: #fff; cursor: pointer; }
+    border: 0; border-radius: 8px; background: #C9A227; color: #111; cursor: pointer; }
   .gate-err { color: #ffb3b3; min-height: 1.2em; margin-top: 10px; font-size: .95rem; }
 </style>
 </head>
@@ -101,7 +103,7 @@
 </div>
 
 <nav class="site-nav">
-  <span class="brand">Ventura Surf</span>
+  <span class="brand-wrap"><img class="nav-shield" src="assets/shield.png" alt="Ventura Surf Soccer Club shield"><span class="brand">Ventura Surf</span></span>
   <div class="tabs">
     <a href="index.html">Home</a>
     <a href="players.html" class="active">Player Hub</a>

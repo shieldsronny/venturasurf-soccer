@@ -6,56 +6,58 @@
 <title>VENTURA SURF – Curriculum & Standards</title>
 <meta name="description" content="Ventura Surf Curriculum & Standards — the Four Pillars, the season roadmap, and the player standards for every age group.">
 <style>
-  :root { --surf-blue: #2B59A7; --dark: #10243e; }
+  :root { --gold: #C9A227; --gold-dark: #8a6d1f; --dark: #0b0b0b; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1c2b3a; line-height: 1.6; }
+  body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1a1a1a; line-height: 1.6; }
   .site-nav { background: var(--dark); display: flex; align-items: center; justify-content: space-between;
-              flex-wrap: wrap; padding: 0.7rem 1.2rem; }
+              flex-wrap: wrap; padding: 0.7rem 1.2rem; border-bottom: 3px solid var(--gold); }
+  .site-nav .brand-wrap { display: flex; align-items: center; gap: 0.6rem; }
+  .site-nav .nav-shield { height: 46px; width: auto; display: block; }
   .site-nav .brand { color: #fff; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
   .site-nav .tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-  .site-nav .tabs a { color: #cfdce9; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
+  .site-nav .tabs a { color: #e6e6e6; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
                       font-size: 0.92rem; font-weight: 600; }
-  .site-nav .tabs a:hover { background: #1a3355; color: #fff; }
-  .site-nav .tabs a.active { background: var(--surf-blue); color: #fff; }
+  .site-nav .tabs a:hover { background: #2a2a2a; color: #fff; }
+  .site-nav .tabs a.active { background: var(--gold); color: #111; }
   header.hero { position: relative; text-align: center; color: #fff; }
   header.hero img.banner { width: 100%; height: auto; display: block; }
   .hero-text { background: var(--dark); padding: 2.2rem 1rem 2.4rem; }
   .hero-text img.logo { width: 120px; height: 120px; }
   .hero-text h1 { font-size: 1.9rem; margin: 0.8rem auto 0.6rem; max-width: 820px; }
-  .hero-text p { max-width: 720px; margin: 0 auto; color: #cfdce9; }
+  .hero-text p { max-width: 720px; margin: 0 auto; color: #e6e6e6; }
   section { max-width: 860px; margin: 0 auto; padding: 2.4rem 1.2rem; }
-  section h2 { color: var(--surf-blue); font-size: 1.35rem; margin-bottom: 0.8rem;
+  section h2 { color: var(--gold-dark); font-size: 1.35rem; margin-bottom: 0.8rem;
                text-transform: uppercase; letter-spacing: 0.05em; }
   section p { margin-bottom: 1rem; }
   .pillars-band { background: var(--dark); max-width: none; padding: 2.6rem 1.2rem; }
   .pillars-inner { max-width: 860px; margin: 0 auto; }
   .pillars-band h2 { color: #fff; }
-  .pillars-band > .pillars-inner > p { color: #cfdce9; }
+  .pillars-band > .pillars-inner > p { color: #e6e6e6; }
   .pillar-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                   gap: 1rem; margin-top: 1.2rem; }
-  .pillar-card { background: #1a3355; border-top: 4px solid #9dbede; border-radius: 4px; padding: 1rem; }
+  .pillar-card { background: #2a2a2a; border-top: 4px solid #d9b84a; border-radius: 4px; padding: 1rem; }
   .pillar-card h3 { color: #fff; text-transform: uppercase; letter-spacing: 0.06em;
                     font-size: 0.95rem; margin-bottom: 0.4rem; }
-  .pillar-card p { color: #cfdce9; font-size: 0.95rem; margin: 0; }
+  .pillar-card p { color: #e6e6e6; font-size: 0.95rem; margin: 0; }
   .group-head { color: var(--dark); font-size: 1.05rem; margin: 1.4rem 0 0.2rem;
                 text-transform: uppercase; letter-spacing: 0.05em; }
   .std { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; font-size: 0.92rem; }
-  .std th { text-align: left; background: #eef3fa; color: var(--surf-blue);
+  .std th { text-align: left; background: #f7f2df; color: var(--gold-dark);
             padding: 0.45rem 0.6rem; font-size: 0.8rem; text-transform: uppercase;
             letter-spacing: 0.04em; }
-  .std td { padding: 0.45rem 0.6rem; border-bottom: 1px solid #dbe4ef; vertical-align: top; }
-  .std .cat-row td { background: var(--surf-blue); color: #fff; font-weight: 700;
+  .std td { padding: 0.45rem 0.6rem; border-bottom: 1px solid #e7dfc6; vertical-align: top; }
+  .std .cat-row td { background: var(--gold); color: #111; font-weight: 700;
                      text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.82rem; }
-  footer { background: var(--dark); color: #cfdce9; padding: 2.2rem 1.2rem; }
+  footer { background: var(--dark); color: #e6e6e6; padding: 2.2rem 1.2rem; }
   footer .inner { max-width: 860px; margin: 0 auto; }
   footer h2 { color: #fff; font-size: 1.1rem; margin-bottom: 0.6rem; }
   footer p { margin-bottom: 0.4rem; }
-  footer a { color: #9dbede; }
+  footer a { color: #d9b84a; }
 </style>
 </head>
 <body>
 <nav class="site-nav">
-  <span class="brand">Ventura Surf</span>
+  <span class="brand-wrap"><img class="nav-shield" src="assets/shield.png" alt="Ventura Surf Soccer Club shield"><span class="brand">Ventura Surf</span></span>
   <div class="tabs">
     <a href="index.html">Home</a>
     <a href="players.html">Player Hub</a>
