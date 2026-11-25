@@ -9,6 +9,14 @@
   :root { --surf-blue: #2B59A7; --dark: #10243e; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1c2b3a; line-height: 1.6; }
+  .site-nav { background: var(--dark); display: flex; align-items: center; justify-content: space-between;
+              flex-wrap: wrap; padding: 0.7rem 1.2rem; }
+  .site-nav .brand { color: #fff; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
+  .site-nav .tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .site-nav .tabs a { color: #cfdce9; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
+                      font-size: 0.92rem; font-weight: 600; }
+  .site-nav .tabs a:hover { background: #1a3355; color: #fff; }
+  .site-nav .tabs a.active { background: var(--surf-blue); color: #fff; }
   header.hero { position: relative; text-align: center; color: #fff; }
   header.hero img.banner { width: 100%; height: auto; display: block; }
   .hero-text { background: var(--dark); padding: 2.2rem 1rem 2.4rem; }
@@ -31,6 +39,17 @@
 </head>
 <body>
 
+<nav class="site-nav">
+  <span class="brand">Ventura Surf</span>
+  <div class="tabs">
+    <a href="index.html" class="active">Home</a>
+    <a href="players.html">Player Hub</a>
+    <a href="curriculum.html">Curriculum &amp; Standards</a>
+    <a href="coaches.html">Coaches Hub</a>
+    <a href="https://venturasurfsoccer.com">Join Us</a>
+  </div>
+</nav>
+
 <header class="hero">
   <img class="banner" src="assets/header.png" alt="Ventura Surf Soccer Club">
   <div class="hero-text">
@@ -40,6 +59,7 @@
     <a class="cta" href="https://venturasurfsoccer.com">JOIN VENTURA SURF</a>
     <a class="cta" href="players.html">PLAYER HUB</a>
     <a class="cta" href="coaches.html">COACHES HUB</a>
+    <a class="cta" href="curriculum.html">CURRICULUM &amp; STANDARDS</a>
   </div>
 </header>
 

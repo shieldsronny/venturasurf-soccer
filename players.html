@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VENTURA SURF – Player Hub</title>
-<meta name="description" content="Ventura Surf Player Hub — this week's training focus, videos to watch at home, and our Players of the Month.">
+<meta name="description" content="Ventura Surf Player Hub — Players of the Month, the Juggle Challenge, and this week's training focus and videos.">
 <style>
   :root { --surf-blue: #2B59A7; --dark: #10243e; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1c2b3a; line-height: 1.6; }
+  .site-nav { background: var(--dark); display: flex; align-items: center; justify-content: space-between;
+              flex-wrap: wrap; padding: 0.7rem 1.2rem; }
+  .site-nav .brand { color: #fff; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
+  .site-nav .tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .site-nav .tabs a { color: #cfdce9; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
+                      font-size: 0.92rem; font-weight: 600; }
+  .site-nav .tabs a:hover { background: #1a3355; color: #fff; }
+  .site-nav .tabs a.active { background: var(--surf-blue); color: #fff; }
   header.hero { position: relative; text-align: center; color: #fff; }
   header.hero img.banner { width: 100%; height: auto; display: block; }
   .hero-text { background: var(--dark); padding: 2.2rem 1rem 2.4rem; }
@@ -30,18 +38,15 @@
             gap: 1rem; margin: 1.2rem 0; }
   .video iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 4px; display: block; }
   .video p { font-size: 0.9rem; margin-top: 0.4rem; }
-  .talking-points { background: var(--dark); color: #fff; border-radius: 6px;
-                    padding: 1.4rem 1.6rem; margin: 1.2rem 0; }
-  .talking-points h3 { color: #9dbede; text-transform: uppercase; letter-spacing: 0.06em;
-                       font-size: 0.9rem; margin-bottom: 0.6rem; }
-  .talking-points li { margin-left: 1.2rem; margin-bottom: 0.4rem; font-size: 1.1rem; font-weight: 600; }
-  .potm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  .potm-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
                gap: 1rem; margin: 1.2rem 0; }
   .potm-card { border: 2px solid var(--surf-blue); border-radius: 6px; padding: 1.2rem;
                text-align: center; }
   .potm-card .photo { width: 110px; height: 110px; border-radius: 50%; background: #eef3fa;
                       margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center;
                       color: var(--surf-blue); font-size: 0.8rem; }
+  .potm-card .group { color: var(--surf-blue); font-size: 0.8rem; font-weight: 700;
+                      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.3rem; }
   .potm-card h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
   .potm-card p { font-size: 0.92rem; margin: 0; color: #44566b; }
   .group-head { color: var(--dark); font-size: 1.05rem; margin: 1.4rem 0 0.2rem;
@@ -64,14 +69,6 @@
   .pillar-card h3 { color: #fff; text-transform: uppercase; letter-spacing: 0.06em;
                     font-size: 0.95rem; margin-bottom: 0.4rem; }
   .pillar-card p { color: #cfdce9; font-size: 0.95rem; margin: 0; }
-  .std { width: 100%; border-collapse: collapse; margin: 0.6rem 0 1.4rem; font-size: 0.92rem; }
-  .std th { text-align: left; background: #eef3fa; color: var(--surf-blue);
-            padding: 0.45rem 0.6rem; font-size: 0.8rem; text-transform: uppercase;
-            letter-spacing: 0.04em; }
-  .std td { padding: 0.45rem 0.6rem; border-bottom: 1px solid #dbe4ef; vertical-align: top; }
-  .std .cat-row td { background: var(--surf-blue); color: #fff; font-weight: 700;
-                     text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.82rem; }
-
   footer { background: var(--dark); color: #cfdce9; padding: 2.2rem 1.2rem; }
   footer .inner { max-width: 860px; margin: 0 auto; }
   footer h2 { color: #fff; font-size: 1.1rem; margin-bottom: 0.6rem; }
@@ -80,16 +77,25 @@
 </style>
 </head>
 <body>
+<nav class="site-nav">
+  <span class="brand">Ventura Surf</span>
+  <div class="tabs">
+    <a href="index.html">Home</a>
+    <a href="players.html" class="active">Player Hub</a>
+    <a href="curriculum.html">Curriculum &amp; Standards</a>
+    <a href="coaches.html">Coaches Hub</a>
+    <a href="https://venturasurfsoccer.com">Join Us</a>
+  </div>
+</nav>
 
 <header class="hero">
-  <img class="banner" src="assets/header.png" alt="Ventura Surf Soccer Club">
+  <img class="banner" src="assets/players-hero.png" alt="Ventura Surf player with the Ventura coastline">
   <div class="hero-text">
     <img class="logo" src="assets/logo.png" alt="Ventura Surf logo">
     <h1>Player Hub</h1>
-    <p>Your home base for the week — what we're working on at training, videos to watch at home, and the players we're celebrating this month.</p>
+    <p>Your home base for the week — the players we're celebrating this month, the Juggle Challenge, and what we're working on at training.</p>
   </div>
 </header>
-
 
 <!-- ============ THE FOUR PILLARS — the club framework ============ -->
 <section class="pillars-band" id="pillars">
@@ -106,233 +112,37 @@
 </section>
 
 <!-- ================================================================
-     WEEKLY UPDATE — THIS SECTION CHANGES EVERY WEEK.
-     To update the hub: replace the week dates, the four pillars,
-     the video embeds, and the talking points below.
-     ================================================================ -->
-<section>
-  <h2>This Week's Focus — November 23–29</h2>
-  <p>Every Ventura Surf team trains from the same curriculum each week. Here's what your player is working on right now:</p>
-
-  <div class="pillars">
-    <div class="pillar"><h3>Technical</h3><p>Running With the Ball</p></div>
-    <div class="pillar"><h3>Tactical</h3><p>Pattern Play</p></div>
-    <div class="pillar"><h3>Mental</h3><p>Social</p></div>
-    <div class="pillar"><h3>Physical</h3><p>Agility</p></div>
-  </div>
-
-  <h2>Watch at Home</h2>
-  <p>Short training videos on this week's technical theme — running with the ball. A few minutes with a ball in the backyard goes a long way.</p>
-
-  <div class="videos">
-    <div class="video">
-      <iframe src="https://www.youtube-nocookie.com/embed/1ZIg4nwMsBg" title="Running with the ball — training video" loading="lazy" allowfullscreen></iframe>
-      <p>Running with the ball — drills and technique</p>
-    </div>
-    <div class="video">
-      <iframe src="https://www.youtube-nocookie.com/embed/1hf-gHE6M2s" title="Running with the ball — training video" loading="lazy" allowfullscreen></iframe>
-      <p>Running with the ball — speed and control</p>
-    </div>
-    <div class="video">
-      <iframe src="https://www.youtube-nocookie.com/embed/4XRQu_Xeg0c" title="Running with the ball — training video" loading="lazy" allowfullscreen></iframe>
-      <p>Running with the ball — attacking space</p>
-    </div>
-  </div>
-
-  <div class="talking-points">
-    <h3>Three Things to Say on the Sideline</h3>
-    <ol>
-      <li>"See space? Take space."</li>
-      <li>"Head up before the ball arrives."</li>
-      <li>"When you run at them, finish the run."</li>
-    </ol>
-  </div>
-</section>
-<!-- ================= END OF WEEKLY UPDATE SECTION ================= -->
-
-
-<!-- ============ CLUB CURRICULUM — the season roadmap ============ -->
-<section id="curriculum">
-  <h2>Our Curriculum — The Season at a Glance</h2>
-  <p>One curriculum for the whole club, March through February. Every month has a purpose, and every week inside it trains all four pillars. This is the plan your player's training follows:</p>
-  <table class="std">
-    <tr><th>Month</th><th>The Focus</th></tr>
-    <tr><td><strong>March</strong></td><td>Tryouts are done — getting every player's individual skill to the same level.</td></tr>
-    <tr><td><strong>April</strong></td><td>Players know what they can do individually; now they learn to play as a unit.</td></tr>
-    <tr><td><strong>May</strong></td><td>An intense month physically, and a social one — building bonds before the break.</td></tr>
-    <tr><td><strong>June</strong></td><td>Break — team camps, optional training, and beach days.</td></tr>
-    <tr><td><strong>July</strong></td><td>Back at full speed for tournament season, with third training sessions where needed.</td></tr>
-    <tr><td><strong>August</strong></td><td>The same push as July, with a close eye on fatigue and injuries after eight hard weeks.</td></tr>
-    <tr><td><strong>September</strong></td><td>How we defend — as a unit and as individuals — plus small-group combination play.</td></tr>
-    <tr><td><strong>October</strong></td><td>Combination play and forward runs — making defenders uncomfortable.</td></tr>
-    <tr><td><strong>November</strong></td><td>Possession and pattern play, showcased at the Thanksgiving tournaments and League Cup.</td></tr>
-    <tr><td><strong>December</strong></td><td>Break — time away from the game, then a camp or two before January.</td></tr>
-    <tr><td><strong>January</strong></td><td>Fitness base back up — transitions, counter-attacks, and finishing in the final third.</td></tr>
-    <tr><td><strong>February</strong></td><td>Possession and combination play, especially in the attacking third.</td></tr>
-  </table>
-  <p>Older teams (U14 and up) follow the same four pillars; December through February is high school season for them, with maintenance work running alongside.</p>
-</section>
-
-<!-- ============ PLAYER STANDARDS — from the club curriculum ============ -->
-<section id="standards">
-  <h2>Player Standards</h2>
-  <p>These are the standards our coaches coach and evaluate against — what a Ventura Surf player is working toward at each age. Players progress from <strong>Novice</strong> to <strong>Competent</strong> to <strong>Proficient</strong> to <strong>Expert</strong>. Find your player's age band and you can see exactly what they're building toward.</p>
-    <h3 class="group-head">1. Technical Skills</h3>
-    <table class="std">
-    <tr><th>Skill</th><th>5–7</th><th>8–10</th><th>11–13</th><th>14–16</th><th>17–19</th></tr>
-    <tr class="cat-row"><td colspan="6">Ball Control</td></tr>
-    <tr><td><strong>Dribbling</strong> — Maneuvering the ball with close ball control using various parts of the foot.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Shielding</strong> — Using body positioning to protect the ball from defenders.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Close Control</strong> — Executing precise touches to keep the ball close in tight spaces.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Passing/First Touch</td></tr>
-    <tr><td><strong>Short Passes</strong> — Quick and accurate passes to teammates in close proximity.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Long Passes</strong> — Distributing the ball over longer distances with precision.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Through Balls</strong> — Strategically placing passes to break through defensive lines.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>First Touch</strong> — Mastering the art of controlling the ball upon receiving it, setting the stage for the next move.</td><td>Novice</td><td>Competent</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Aerial First Touch</strong> — Controlled ball handling in mid-air situations.</td><td>Novice</td><td>Competent</td><td>Competent</td><td>Competent</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Shooting</td></tr>
-    <tr><td><strong>Finishing</strong> — Scoring goals with accuracy using both feet.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Volleys</strong> — Striking the ball cleanly while it&#x27;s in mid-air.</td><td>Novice</td><td>Competent</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Long-range Shooting</strong> — Developing the ability to score from outside the box.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Heading</td></tr>
-    <tr><td><strong>Aerial Duels</strong> — Winning battles in the air, both defensively and offensively.</td><td>N/A</td><td>N/A</td><td>Novice</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Directional Heading</strong> — Redirecting the ball accurately to a specific area.</td><td>N/A</td><td>N/A</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Timing</strong> — Anticipating the flight of the ball for well-timed headers.</td><td>N/A</td><td>N/A</td><td>Novice</td><td>Proficient</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">1v1 Skills</td></tr>
-    <tr><td><strong>Skill Moves</strong> — Utilizing effective one-on-one moves to beat defenders.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Change of Direction</strong> — Swift changes in direction to outmaneuver opponents.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Acceleration</strong> — Quick bursts of speed to leave defenders behind.</td><td>Novice</td><td>Proficient</td><td>Expert</td><td>Expert</td><td>Expert</td></tr>
-    </table>
-    <h3 class="group-head">2. Tactical Awareness</h3>
-    <table class="std">
-    <tr><th>Skill</th><th>5–7</th><th>8–10</th><th>11–13</th><th>14–16</th><th>17–19</th></tr>
-    <tr class="cat-row"><td colspan="6">Positional Play</td></tr>
-    <tr><td><strong>Understanding Formations</strong> — Grasping the tactical implications of different team formations.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Occupying Space</strong> — Maintaining optimal positions relative to teammates and opponents.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Transitioning</strong> — Smoothly shifting between offensive and defensive roles.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Decision-Making</td></tr>
-    <tr><td><strong>Quick Thinking</strong> — Rapidly assessing options and choosing the best course of action.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Risk Assessment</strong> — Knowing when to take calculated risks and when to play it safe.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Adaptability</strong> — Adjusting strategies based on the evolving dynamics of the game.</td><td>Novice</td><td>Novice</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Offensive Movement</td></tr>
-    <tr><td><strong>Creating Space</strong> — Making runs to open up space for teammates.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Supporting Attacks</strong> — Positioning oneself to provide passing options.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Combination Play</strong> — Linking up with teammates through effective passing sequences.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Defensive Skills</td></tr>
-    <tr><td><strong>Marking</strong> — Staying close to opponents to prevent them from receiving or passing the ball.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Tackling</strong> — Executing clean and effective tackles to regain possession.</td><td>Novice</td><td>Novice</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Interceptions</strong> — Anticipating passes and intercepting them before they reach their target.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Set Pieces</td></tr>
-    <tr><td><strong>Taking Set Pieces</strong> — Delivering accurate corners, free kicks, and throw-ins.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Defending Set Pieces</strong> — Organizing defensive formations to minimize opposition threats.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Reading the Game</td></tr>
-    <tr><td><strong>Anticipation</strong> — Predicting opponents&#x27; movements and decision-making.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Game Understanding</strong> — Recognizing patterns and trends during a match.</td><td>N/A</td><td>Novice</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Awareness</td></tr>
-    <tr><td><strong>360-Degree Awareness</strong> — Keeping track of the ball, teammates, and opponents simultaneously.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Spatial Awareness</strong> — Understanding positioning in relation to the playing field.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Analytical Skills</td></tr>
-    <tr><td><strong>Quick Analysis</strong> — Rapidly assessing situations and making informed decisions.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Strategic Thinking</strong> — Understanding the broader strategic aspects of the game.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Expert</td><td>Expert</td></tr>
-    </table>
-    <h3 class="group-head">3. Physical Fitness</h3>
-    <table class="std">
-    <tr><th>Skill</th><th>5–7</th><th>8–10</th><th>11–13</th><th>14–16</th><th>17–19</th></tr>
-    <tr class="cat-row"><td colspan="6">Endurance</td></tr>
-    <tr><td><strong>Cardiovascular Fitness</strong> — Building stamina for sustained performance throughout the match.</td><td>Competent</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Recovery</strong> — Quick recovery between sprints and intense efforts.</td><td>Competent</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Speed</td></tr>
-    <tr><td><strong>Acceleration</strong> — Rapidly reaching top speed from a stationary position.</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Sprinting</strong> — Maintaining high-speed runs over short distances.</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Strength</td></tr>
-    <tr><td><strong>Core Strength</strong> — Stability and power generation through the core.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Physical Duels</strong> — Winning battles for possession through strength and balance.</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Agility</td></tr>
-    <tr><td><strong>Quick Changes of Direction</strong> — Nimbly navigating through tight spaces.</td><td>Competent</td><td>Proficient</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Agile Movements</strong> — Sharp and responsive movements to outmaneuver opponents.</td><td>Competent</td><td>Proficient</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Flexibility</td></tr>
-    <tr><td><strong>Preventing Injuries</strong> — Incorporating stretching routines to enhance flexibility and reduce injury risk.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Mobility</strong> — Ensuring a full range of motion for optimal performance.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    </table>
-    <h3 class="group-head">4. Mental Attributes</h3>
-    <table class="std">
-    <tr><th>Skill</th><th>5–7</th><th>8–10</th><th>11–13</th><th>14–16</th><th>17–19</th></tr>
-    <tr class="cat-row"><td colspan="6">Focus</td></tr>
-    <tr><td><strong>Concentration</strong> — Staying focused on the game, opponents, and strategy for the entire match.</td><td>Novice</td><td>Competent</td><td>Expert</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Blocking Distractions</strong> — Managing external factors to maintain mental clarity.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Composure</td></tr>
-    <tr><td><strong>Calm Under Pressure</strong> — Making sound decisions in high-pressure situations.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Handling Mistakes</strong> — Bouncing back from errors with composure and resilience.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Leadership</td></tr>
-    <tr><td><strong>Guiding Teammates</strong> — Vocal communication and directing teammates on the field.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Proficient</td><td>Expert</td></tr>
-    <tr><td><strong>Leading by Example</strong> — Demonstrating a strong work ethic and commitment to excellence.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Adaptability</td></tr>
-    <tr><td><strong>Adjusting to Opponents</strong> — Quickly adapting strategies based on the strengths and weaknesses of the opposition.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Positional Flexibility</strong> — Being adaptable to different roles and positions within the team.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Competitive Spirit</td></tr>
-    <tr><td><strong>Positive Mindset</strong> — Maintaining a competitive edge with a positive and determined mindset.</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Winning Mentality</strong> — Striving for success and victory in every match.</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td><td>Expert</td></tr>
-    </table>
-    <h3 class="group-head">5. Teamwork and Communication</h3>
-    <table class="std">
-    <tr><th>Skill</th><th>5–7</th><th>8–10</th><th>11–13</th><th>14–16</th><th>17–19</th></tr>
-    <tr class="cat-row"><td colspan="6">Communication Skills</td></tr>
-    <tr><td><strong>Clear Communication</strong> — Articulating instructions and information concisely.</td><td>Novice</td><td>Novice</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>On-Field Communication</strong> — Constant communication with teammates to coordinate movements.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Collaboration</td></tr>
-    <tr><td><strong>Understanding Roles</strong> — Grasping individual responsibilities within team structures.</td><td>Novice</td><td>Novice</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Interconnected Play</strong> — Developing synergy with teammates for effective collaboration.</td><td>N/A</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Supporting Teammates</td></tr>
-    <tr><td><strong>Team Cohesion</strong> — Fostering a sense of unity and support among teammates.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Encouragement</strong> — Providing positive reinforcement and support during challenges.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr class="cat-row"><td colspan="6">Understanding Roles</td></tr>
-    <tr><td><strong>Team Formation</strong> — Grasping the overall strategy and individual roles within the team.</td><td>Novice</td><td>Competent</td><td>Proficient</td><td>Expert</td><td>Expert</td></tr>
-    <tr><td><strong>Executing Team Tactics</strong> — Implementing team-specific strategies during matches.</td><td>Novice</td><td>Novice</td><td>Competent</td><td>Expert</td><td>Expert</td></tr>
-    </table>
-</section>
-
-<!-- ================================================================
-     PLAYERS OF THE MONTH — updated monthly, four sections:
-     Older Boys, Older Girls, Younger Boys, Younger Girls.
-     Add one .potm-card per player: photo, name, team, and a line
-     from their coach. NOTE: a parent's written consent is required
+     PLAYERS OF THE MONTH — updated monthly. Four honorees in one
+     row: Older Boys, Older Girls, Younger Boys, Younger Girls.
+     One .potm-card per player: photo, name, team, and a line from
+     their coach. NOTE: a parent's written consent is required
      before posting a player's photo or name (CA AB 2007, from
      January 1, 2027).
      ================================================================ -->
 <section>
   <h2>Players of the Month — November</h2>
   <p>Each month our coaches nominate players who stood out — for their work rate, their growth, and the way they lift their team. November's Players of the Month will be announced here soon.</p>
-
-  <h3 class="group-head">Older Boys</h3>
   <div class="potm-grid">
     <div class="potm-card">
+      <div class="group">Older Boys</div>
       <div class="photo">Photo</div>
       <h3>Coming Soon</h3>
       <p>Coach nominations are in — check back for November's honoree.</p>
     </div>
-  </div>
-
-  <h3 class="group-head">Older Girls</h3>
-  <div class="potm-grid">
     <div class="potm-card">
+      <div class="group">Older Girls</div>
       <div class="photo">Photo</div>
       <h3>Coming Soon</h3>
       <p>Coach nominations are in — check back for November's honoree.</p>
     </div>
-  </div>
-
-  <h3 class="group-head">Younger Boys</h3>
-  <div class="potm-grid">
     <div class="potm-card">
+      <div class="group">Younger Boys</div>
       <div class="photo">Photo</div>
       <h3>Coming Soon</h3>
       <p>Coach nominations are in — check back for November's honoree.</p>
     </div>
-  </div>
-
-  <h3 class="group-head">Younger Girls</h3>
-  <div class="potm-grid">
     <div class="potm-card">
+      <div class="group">Younger Girls</div>
       <div class="photo">Photo</div>
       <h3>Coming Soon</h3>
       <p>Coach nominations are in — check back for November's honoree.</p>
@@ -378,16 +188,41 @@
     <tr><td colspan="3">No entries yet — be the first.</td></tr>
   </table>
 </section>
-<!-- ================= END OF JUGGLE CHALLENGE ================= -->
-
+<!-- ================================================================
+     WEEKLY UPDATE — THIS SECTION CHANGES EVERY WEEK.
+     To update the hub: replace the week dates, the four pillars,
+     the video embeds, and the talking points below.
+     ================================================================ -->
 <section>
-  <h2>Back to the Club</h2>
-  <p>
-    <a href="index.html">Ventura Surf home</a> &middot;
-    <a href="https://venturasurfsoccer.com">venturasurfsoccer.com</a>
-  </p>
-</section>
+  <h2>This Week's Focus — November 23–29</h2>
+  <p>Every Ventura Surf team trains from the same curriculum each week. Here's what your player is working on right now:</p>
 
+  <div class="pillars">
+    <div class="pillar"><h3>Technical</h3><p>Running With the Ball</p></div>
+    <div class="pillar"><h3>Tactical</h3><p>Pattern Play</p></div>
+    <div class="pillar"><h3>Mental</h3><p>Social</p></div>
+    <div class="pillar"><h3>Physical</h3><p>Agility</p></div>
+  </div>
+
+  <h2>Watch at Home</h2>
+  <p>Short training videos on this week's technical theme — running with the ball. A few minutes with a ball in the backyard goes a long way.</p>
+
+  <div class="videos">
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/1ZIg4nwMsBg" title="Running with the ball — training video" loading="lazy" allowfullscreen></iframe>
+      <p>Running with the ball — drills and technique</p>
+    </div>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/1hf-gHE6M2s" title="Running with the ball — training video" loading="lazy" allowfullscreen></iframe>
+      <p>Running with the ball — speed and control</p>
+    </div>
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/4XRQu_Xeg0c" title="Running with the ball — training video" loading="lazy" allowfullscreen></iframe>
+      <p>Running with the ball — attacking space</p>
+    </div>
+  </div>
+
+</section>
 <footer>
   <div class="inner">
     <h2>VENTURA FOOTBALL CLUB</h2>
@@ -398,6 +233,7 @@
     <p>Contact: <a href="mailto:ronny@venturasurfsoccer.com">ronny@venturasurfsoccer.com</a></p>
   </div>
 </footer>
+
 
 </body>
 </html>

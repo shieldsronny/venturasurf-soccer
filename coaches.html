@@ -9,6 +9,14 @@
   :root { --surf-blue: #2B59A7; --dark: #10243e; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: "Helvetica Neue", Arial, sans-serif; color: #1c2b3a; line-height: 1.6; }
+  .site-nav { background: var(--dark); display: flex; align-items: center; justify-content: space-between;
+              flex-wrap: wrap; padding: 0.7rem 1.2rem; }
+  .site-nav .brand { color: #fff; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.95rem; }
+  .site-nav .tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+  .site-nav .tabs a { color: #cfdce9; text-decoration: none; padding: 0.45rem 0.9rem; border-radius: 4px;
+                      font-size: 0.92rem; font-weight: 600; }
+  .site-nav .tabs a:hover { background: #1a3355; color: #fff; }
+  .site-nav .tabs a.active { background: var(--surf-blue); color: #fff; }
   header.hero { position: relative; text-align: center; color: #fff; }
   header.hero img.banner { width: 100%; height: auto; display: block; }
   .hero-text { background: var(--dark); padding: 2.2rem 1rem 2.4rem; }
@@ -27,6 +35,11 @@
   .pillar h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em;
                color: var(--surf-blue); margin-bottom: 0.3rem; }
   .pillar p { font-size: 1.05rem; font-weight: 700; margin: 0; }
+  .talking-points { background: var(--dark); color: #fff; border-radius: 6px;
+                    padding: 1.4rem 1.6rem; margin: 1.2rem 0; }
+  .talking-points h3 { color: #9dbede; text-transform: uppercase; letter-spacing: 0.06em;
+                       font-size: 0.9rem; margin-bottom: 0.6rem; }
+  .talking-points li { margin-left: 1.2rem; margin-bottom: 0.4rem; font-size: 1.1rem; font-weight: 600; }
   .link-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
                 gap: 1rem; margin: 1.2rem 0; }
   .link-card { border: 2px solid var(--surf-blue); border-radius: 6px; padding: 1.1rem 1.2rem; }
@@ -41,6 +54,17 @@
 </style>
 </head>
 <body>
+
+<nav class="site-nav">
+  <span class="brand">Ventura Surf</span>
+  <div class="tabs">
+    <a href="index.html">Home</a>
+    <a href="players.html">Player Hub</a>
+    <a href="curriculum.html">Curriculum &amp; Standards</a>
+    <a href="coaches.html" class="active">Coaches Hub</a>
+    <a href="https://venturasurfsoccer.com">Join Us</a>
+  </div>
+</nav>
 
 <header class="hero">
   <img class="banner" src="assets/header.png" alt="Ventura Surf Soccer Club">
@@ -79,6 +103,25 @@
   </ul>
 </section>
 
+<!-- ================================================================
+     SIDELINE TALKING POINTS — moved here from the Player Hub.
+     Update weekly with the new week's three phrases so coaches
+     and the sideline stay in sync.
+     ================================================================ -->
+<section>
+  <h2>Sideline Talking Points — This Week</h2>
+  <p>The three phrases we're asking families to use from the sideline this week. Coach them in training so what players hear on game day matches what they practiced.</p>
+  <div class="talking-points">
+    <h3>Three Things to Say on the Sideline</h3>
+    <ol>
+      <li>"See space? Take space."</li>
+      <li>"Head up before the ball arrives."</li>
+      <li>"When you run at them, finish the run."</li>
+    </ol>
+  </div>
+</section>
+
+
 <section>
   <h2>Curriculum &amp; Standards</h2>
   <div class="link-cards">
@@ -87,11 +130,11 @@
       <p>The full club curriculum — 4 Pillars, monthly periodization, and Age Group Standards.</p>
     </div>
     <div class="link-card">
-      <h3><a href="players.html#standards">Player Standards</a></h3>
+      <h3><a href="curriculum.html#standards">Player Standards</a></h3>
       <p>The same standards families see on the Player Hub — what players are working toward at each age.</p>
     </div>
     <div class="link-card">
-      <h3><a href="players.html#pillars">The Four Pillars</a></h3>
+      <h3><a href="curriculum.html#pillars">The Four Pillars</a></h3>
       <p>Technical, Tactical, Physical, Mental — the framework behind every session.</p>
     </div>
   </div>
