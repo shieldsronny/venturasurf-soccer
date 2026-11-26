@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-<meta name="description" content="Ventura Surf Soccer Club — providing the best of the best opportunities and experiences in Ventura County. Operated by Ventura Football Club, a 501(c)(3) nonprofit organization.">
+<meta name="description" content="Ventura Surf Soccer Club — providing the best of the best opportunities and experiences in Ventura County, and Santa Barbara County. Operated by Ventura Football Club, a 501(c)(3) nonprofit organization.">
 <style>
   :root { --surf-blue: #2B59A7; --blue-dark: #1d4076; --blue-deep: #10243f; --blue-bright: #3f74c9;
           --dark: #0b0b0b; --ink: #1c2b3a; --muted: #44566b; --tint: #eef3fa; --line: #dbe4ef;
@@ -156,6 +156,32 @@
     background: linear-gradient(180deg, var(--blue-bright), var(--surf-blue)); box-shadow: 0 8px 20px rgba(43,89,167,0.4); }
   .gate-err { color: #ffb3b3; min-height: 1.2em; margin-top: 10px; font-size: .95rem; }
 
+  /* ---------- Player Standards (by age band) ---------- */
+  .std-legend { display: flex; flex-wrap: wrap; gap: 0.4rem 0.6rem; align-items: center; }
+  .std-band { border: 1px solid var(--line); border-radius: 14px; margin: 0.8rem 0; background: #fff;
+              box-shadow: var(--shadow); overflow: hidden; }
+  .std-band summary { cursor: pointer; padding: 1rem 1.2rem; list-style: none; display: flex;
+    justify-content: space-between; align-items: center; background: var(--tint);
+    font-family: "Barlow Condensed", sans-serif; font-size: 1.4rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.04em; color: var(--blue-deep); }
+  .std-band summary::-webkit-details-marker { display: none; }
+  .std-band summary::after { content: "+"; color: var(--surf-blue); font-size: 1.6rem; font-weight: 700; }
+  .std-band[open] summary::after { content: "3"; }
+  .std-band .band-body { padding: 0.4rem 1.2rem 1.2rem; }
+  .std-band h4 { margin: 1.1rem 0 0.2rem; color: var(--surf-blue); font-family: "Barlow Condensed", sans-serif;
+                 font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .std-band h5 { margin: 0.8rem 0 0.2rem; font-size: 0.98rem; color: var(--blue-deep); }
+  .std-list { list-style: none; }
+  .std-list li { padding: 0.32rem 0; border-bottom: 1px dashed var(--line); color: var(--muted); font-size: 0.95rem; }
+  .std-list li:last-child { border-bottom: 0; }
+  .std-list li strong { color: var(--ink); }
+  .lvl { display: inline-block; min-width: 88px; text-align: center; padding: 0.1rem 0.5rem; border-radius: 999px;
+         font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; margin-right: 0.55rem; vertical-align: 1px; }
+  .lvl-novice { background: #e3eaf3; color: #44566b; }
+  .lvl-competent { background: #bcd2ec; color: #1d4076; }
+  .lvl-proficient { background: var(--surf-blue); color: #fff; }
+  .lvl-expert { background: var(--blue-deep); color: #fff; }
+
   /* ---------- Mobile ---------- */
   img { max-width: 100%; }
   @media (max-width: 720px) {
@@ -201,7 +227,7 @@
   <img class="banner" src="assets/huddle-hero.jpg" alt="Ventura Surf players in a team huddle">
   <div class="hero-text">
     <img class="logo" src="assets/shield.png" alt="Ventura Surf Soccer Club shield">
-    <h1>Providing the Best of The Best Opportunities and Experiences in Ventura County.</h1>
+    <h1>Providing the Best of The Best Opportunities and Experiences in Ventura County, and Santa Barbara County.</h1>
     <p>We are a proud member of the Surf Nation Soccer family, and are committed to helping youth soccer players follow their proven pathway to success.</p>
     <a class="cta" href="https://venturasurfsoccer.com/join">JOIN VENTURA SURF</a>
     <a class="cta" href="players.html">PLAYER HUB</a>
