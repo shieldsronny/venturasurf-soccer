@@ -134,9 +134,9 @@
 
   /* ---------- Footer ---------- */
   footer { background: linear-gradient(180deg, var(--blue-deep), #0b0b0b); color: #cfdce9;
-           padding: 2.6rem 1.2rem; border-top: 4px solid var(--surf-blue); }
+           padding: 2.2rem 1.2rem; border-top: 4px solid var(--surf-blue); font-size: 0.85rem; line-height: 1.55; }
   footer .inner { max-width: 1020px; margin: 0 auto; }
-  footer h2 { color: #fff; font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
+  footer h2 { color: #fff; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
   footer p { margin-bottom: 0.4rem; }
   footer a { color: #9dbede; }
 
@@ -156,10 +156,31 @@
     background: linear-gradient(180deg, var(--blue-bright), var(--surf-blue)); box-shadow: 0 8px 20px rgba(43,89,167,0.4); }
   .gate-err { color: #ffb3b3; min-height: 1.2em; margin-top: 10px; font-size: .95rem; }
 
-  @media (max-width: 640px) {
+  /* ---------- Mobile ---------- */
+  img { max-width: 100%; }
+  @media (max-width: 720px) {
+    .site-nav { justify-content: center; padding: 0.55rem 0.7rem; }
+    .site-nav .nav-shield { height: 44px; }
+    .site-nav .tabs { justify-content: center; gap: 0.2rem; }
+    .site-nav .tabs a { padding: 0.42rem 0.7rem; font-size: 0.95rem; }
+    .hero-text { padding: 1.9rem 0.9rem 2.1rem; }
+    .hero-text img.logo { height: 100px; }
     .hero-text h1 { font-size: 2rem; }
+    .hero-text p { font-size: 0.98rem; }
     section { padding: 2.1rem 1rem; }
-    .site-nav { justify-content: center; }
+    section h2 { font-size: 1.5rem; }
+    .pillars-inner { padding: 2.1rem 1rem; }
+    .pillars-band h2 { font-size: 1.6rem; }
+    section .cta { display: block; text-align: center; }
+    .board, .std { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; white-space: nowrap; }
+    .talking-points { padding: 1.1rem 1rem; }
+    .talking-points li { font-size: 1rem; }
+    footer { padding: 1.8rem 1rem; }
+  }
+  @media (max-width: 460px) {
+    .pillars, .potm-grid, .link-cards, .pillar-cards, .videos { grid-template-columns: 1fr; }
+    .hero-text h1 { font-size: 1.75rem; }
+    .gate-card h2 { font-size: 1.6rem; }
   }
 </style>
 </head>
