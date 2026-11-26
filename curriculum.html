@@ -168,9 +168,9 @@
   .std-band summary::after { content: "+"; color: var(--surf-blue); font-size: 1.6rem; font-weight: 700; }
   .std-band[open] summary::after { content: "3"; }
   .std-band .band-body { padding: 0.4rem 1.2rem 1.2rem; }
-  .std-band h4 { margin: 1.1rem 0 0.2rem; color: var(--surf-blue); font-family: "Barlow Condensed", sans-serif;
+  .std-band h3 { margin: 1.1rem 0 0.2rem; color: var(--surf-blue); font-family: "Barlow Condensed", sans-serif;
                  font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .std-band h5 { margin: 0.8rem 0 0.2rem; font-size: 0.98rem; color: var(--blue-deep); }
+  .std-band h4 { margin: 0.8rem 0 0.2rem; font-size: 0.98rem; color: var(--blue-deep); }
   .std-list { list-style: none; }
   .std-list li { padding: 0.32rem 0; border-bottom: 1px dashed var(--line); color: var(--muted); font-size: 0.95rem; }
   .std-list li:last-child { border-bottom: 0; }
@@ -181,6 +181,22 @@
   .lvl-competent { background: #bcd2ec; color: #1d4076; }
   .lvl-proficient { background: var(--surf-blue); color: #fff; }
   .lvl-expert { background: var(--blue-deep); color: #fff; }
+
+  /* ---------- Accessibility ---------- */
+  .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 200; background: var(--blue-deep); color: #fff;
+               padding: 0.6rem 1.1rem; border-radius: 0 0 10px 10px; font-weight: 700; transition: top 0.2s ease; }
+  .skip-link:focus { top: 0; }
+  :focus-visible { outline: 3px solid var(--surf-blue); outline-offset: 2px; }
+  .site-nav a:focus-visible, .gate button:focus-visible, .gate input:focus-visible,
+  .pillars-band a:focus-visible, footer a:focus-visible { outline-color: #fff; }
+  footer a { text-decoration: underline; }
+  .gate-label { display: block; text-align: left; margin: 0 0 6px; font-weight: 600; color: #d7e3f2; font-size: 0.95rem; }
+  .gate-card-title { font-family: "Barlow Condensed", sans-serif; font-size: 2rem; font-weight: 700;
+                     text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 0.4rem; color: #fff; }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
 
   /* ---------- Mobile ---------- */
   img { max-width: 100%; }
@@ -211,7 +227,8 @@
 </style>
 </head>
 <body>
-<nav class="site-nav">
+  <a class="skip-link" href="#main">Skip to main content</a>
+<nav class="site-nav" aria-label="Main">
   <span class="brand-wrap"><img class="nav-shield" src="assets/shield.png" alt="Ventura Surf Soccer Club shield"></span>
   <div class="tabs">
     <a href="index.html">Home</a>
@@ -221,6 +238,7 @@
     <a href="https://venturasurfsoccer.com/join">Join Us</a>
   </div>
 </nav>
+  <main id="main">
 
 <header class="hero">
   <div class="hero-text">
@@ -249,7 +267,7 @@
   <h2>Our Curriculum — The Season at a Glance</h2>
   <p>One curriculum for the whole club, January through December. Every month has a purpose, and every week inside it trains all four pillars. This is the plan your player's training follows:</p>
   <table class="std">
-    <tr><th>Month</th><th>The Focus</th></tr>
+    <tr><th scope="col">Month</th><th scope="col">The Focus</th></tr>
     <tr><td><strong>January</strong></td><td>Fitness base back up — transitions, counter-attacks, and finishing in the final third.</td></tr>
     <tr><td><strong>February</strong></td><td>Possession and combination play, especially in the attacking third.</td></tr>
     <tr><td><strong>March</strong></td><td>Tryouts are done — getting every player's individual skill to the same level.</td></tr>
@@ -272,146 +290,146 @@
   <p>These are the standards our coaches coach and evaluate against — what a Ventura Surf player is working toward at each age. Players progress from <strong>Novice</strong> to <strong>Competent</strong> to <strong>Proficient</strong> to <strong>Expert</strong>. Pick your player's age band below — you'll only see what applies to them.</p>
   <p class="std-legend"><span class="lvl lvl-novice">Novice</span> Just starting &nbsp; <span class="lvl lvl-competent">Competent</span> Getting it &nbsp; <span class="lvl lvl-proficient">Proficient</span> Game-ready &nbsp; <span class="lvl lvl-expert">Expert</span> Mastery</p>
   <details class="std-band"><summary>Ages 5–7</summary><div class="band-body">
-    <h4>1. Technical Skills</h4>
-    <h5>Ball Control</h5>
+    <h3>1. Technical Skills</h3>
+    <h4>Ball Control</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Dribbling</strong> — Maneuvering the ball with close ball control using various parts of the foot.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Shielding</strong> — Using body positioning to protect the ball from defenders.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Close Control</strong> — Executing precise touches to keep the ball close in tight spaces.</li>
     </ul>
-    <h5>Passing/First Touch</h5>
+    <h4>Passing/First Touch</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Short Passes</strong> — Quick and accurate passes to teammates in close proximity.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Through Balls</strong> — Strategically placing passes to break through defensive lines.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>First Touch</strong> — Mastering the art of controlling the ball upon receiving it, setting the stage for the next move.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Aerial First Touch</strong> — Controlled ball handling in mid-air situations.</li>
     </ul>
-    <h5>Shooting</h5>
+    <h4>Shooting</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Finishing</strong> — Scoring goals with accuracy using both feet.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Volleys</strong> — Striking the ball cleanly while it&#x27;s in mid-air.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Long-range Shooting</strong> — Developing the ability to score from outside the box.</li>
     </ul>
-    <h5>1v1 Skills</h5>
+    <h4>1v1 Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Skill Moves</strong> — Utilizing effective one-on-one moves to beat defenders.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Change of Direction</strong> — Swift changes in direction to outmaneuver opponents.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Acceleration</strong> — Quick bursts of speed to leave defenders behind.</li>
     </ul>
-    <h4>2. Tactical Awareness</h4>
-    <h5>Positional Play</h5>
+    <h3>2. Tactical Awareness</h3>
+    <h4>Positional Play</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Understanding Formations</strong> — Grasping the tactical implications of different team formations.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Occupying Space</strong> — Maintaining optimal positions relative to teammates and opponents.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Transitioning</strong> — Smoothly shifting between offensive and defensive roles.</li>
     </ul>
-    <h5>Decision-Making</h5>
+    <h4>Decision-Making</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Quick Thinking</strong> — Rapidly assessing options and choosing the best course of action.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Risk Assessment</strong> — Knowing when to take calculated risks and when to play it safe.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Adaptability</strong> — Adjusting strategies based on the evolving dynamics of the game.</li>
     </ul>
-    <h5>Offensive Movement</h5>
+    <h4>Offensive Movement</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Creating Space</strong> — Making runs to open up space for teammates.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Supporting Attacks</strong> — Positioning oneself to provide passing options.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Combination Play</strong> — Linking up with teammates through effective passing sequences.</li>
     </ul>
-    <h5>Defensive Skills</h5>
+    <h4>Defensive Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Marking</strong> — Staying close to opponents to prevent them from receiving or passing the ball.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Tackling</strong> — Executing clean and effective tackles to regain possession.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Interceptions</strong> — Anticipating passes and intercepting them before they reach their target.</li>
     </ul>
-    <h5>Reading the Game</h5>
+    <h4>Reading the Game</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Anticipation</strong> — Predicting opponents&#x27; movements and decision-making.</li>
     </ul>
-    <h5>Awareness</h5>
+    <h4>Awareness</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Spatial Awareness</strong> — Understanding positioning in relation to the playing field.</li>
     </ul>
-    <h5>Analytical Skills</h5>
+    <h4>Analytical Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Quick Analysis</strong> — Rapidly assessing situations and making informed decisions.</li>
     </ul>
-    <h4>3. Physical Fitness</h4>
-    <h5>Endurance</h5>
+    <h3>3. Physical Fitness</h3>
+    <h4>Endurance</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Cardiovascular Fitness</strong> — Building stamina for sustained performance throughout the match.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Recovery</strong> — Quick recovery between sprints and intense efforts.</li>
     </ul>
-    <h5>Speed</h5>
+    <h4>Speed</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Acceleration</strong> — Rapidly reaching top speed from a stationary position.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Sprinting</strong> — Maintaining high-speed runs over short distances.</li>
     </ul>
-    <h5>Strength</h5>
+    <h4>Strength</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Core Strength</strong> — Stability and power generation through the core.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Physical Duels</strong> — Winning battles for possession through strength and balance.</li>
     </ul>
-    <h5>Agility</h5>
+    <h4>Agility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Quick Changes of Direction</strong> — Nimbly navigating through tight spaces.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Agile Movements</strong> — Sharp and responsive movements to outmaneuver opponents.</li>
     </ul>
-    <h4>4. Mental Attributes</h4>
-    <h5>Focus</h5>
+    <h3>4. Mental Attributes</h3>
+    <h4>Focus</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Concentration</strong> — Staying focused on the game, opponents, and strategy for the entire match.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Blocking Distractions</strong> — Managing external factors to maintain mental clarity.</li>
     </ul>
-    <h5>Composure</h5>
+    <h4>Composure</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Calm Under Pressure</strong> — Making sound decisions in high-pressure situations.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Handling Mistakes</strong> — Bouncing back from errors with composure and resilience.</li>
     </ul>
-    <h5>Leadership</h5>
+    <h4>Leadership</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Guiding Teammates</strong> — Vocal communication and directing teammates on the field.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Leading by Example</strong> — Demonstrating a strong work ethic and commitment to excellence.</li>
     </ul>
-    <h5>Adaptability</h5>
+    <h4>Adaptability</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Adjusting to Opponents</strong> — Quickly adapting strategies based on the strengths and weaknesses of the opposition.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Positional Flexibility</strong> — Being adaptable to different roles and positions within the team.</li>
     </ul>
-    <h5>Competitive Spirit</h5>
+    <h4>Competitive Spirit</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Positive Mindset</strong> — Maintaining a competitive edge with a positive and determined mindset.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Winning Mentality</strong> — Striving for success and victory in every match.</li>
     </ul>
-    <h4>5. Teamwork and Communication</h4>
-    <h5>Communication Skills</h5>
+    <h3>5. Teamwork and Communication</h3>
+    <h4>Communication Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Clear Communication</strong> — Articulating instructions and information concisely.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>On-Field Communication</strong> — Constant communication with teammates to coordinate movements.</li>
     </ul>
-    <h5>Collaboration</h5>
+    <h4>Collaboration</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Understanding Roles</strong> — Grasping individual responsibilities within team structures.</li>
     </ul>
-    <h5>Supporting Teammates</h5>
+    <h4>Supporting Teammates</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Team Cohesion</strong> — Fostering a sense of unity and support among teammates.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Encouragement</strong> — Providing positive reinforcement and support during challenges.</li>
     </ul>
-    <h5>Understanding Roles</h5>
+    <h4>Understanding Roles</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Team Formation</strong> — Grasping the overall strategy and individual roles within the team.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Executing Team Tactics</strong> — Implementing team-specific strategies during matches.</li>
     </ul>
   </div></details>
   <details class="std-band"><summary>Ages 8–10</summary><div class="band-body">
-    <h4>1. Technical Skills</h4>
-    <h5>Ball Control</h5>
+    <h3>1. Technical Skills</h3>
+    <h4>Ball Control</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Dribbling</strong> — Maneuvering the ball with close ball control using various parts of the foot.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Shielding</strong> — Using body positioning to protect the ball from defenders.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Close Control</strong> — Executing precise touches to keep the ball close in tight spaces.</li>
     </ul>
-    <h5>Passing/First Touch</h5>
+    <h4>Passing/First Touch</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Short Passes</strong> — Quick and accurate passes to teammates in close proximity.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Long Passes</strong> — Distributing the ball over longer distances with precision.</li>
@@ -419,146 +437,146 @@
       <li><span class="lvl lvl-competent">Competent</span><strong>First Touch</strong> — Mastering the art of controlling the ball upon receiving it, setting the stage for the next move.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Aerial First Touch</strong> — Controlled ball handling in mid-air situations.</li>
     </ul>
-    <h5>Shooting</h5>
+    <h4>Shooting</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Finishing</strong> — Scoring goals with accuracy using both feet.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Volleys</strong> — Striking the ball cleanly while it&#x27;s in mid-air.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Long-range Shooting</strong> — Developing the ability to score from outside the box.</li>
     </ul>
-    <h5>1v1 Skills</h5>
+    <h4>1v1 Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Skill Moves</strong> — Utilizing effective one-on-one moves to beat defenders.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Change of Direction</strong> — Swift changes in direction to outmaneuver opponents.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Acceleration</strong> — Quick bursts of speed to leave defenders behind.</li>
     </ul>
-    <h4>2. Tactical Awareness</h4>
-    <h5>Positional Play</h5>
+    <h3>2. Tactical Awareness</h3>
+    <h4>Positional Play</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Understanding Formations</strong> — Grasping the tactical implications of different team formations.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Occupying Space</strong> — Maintaining optimal positions relative to teammates and opponents.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Transitioning</strong> — Smoothly shifting between offensive and defensive roles.</li>
     </ul>
-    <h5>Decision-Making</h5>
+    <h4>Decision-Making</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Quick Thinking</strong> — Rapidly assessing options and choosing the best course of action.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Risk Assessment</strong> — Knowing when to take calculated risks and when to play it safe.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Adaptability</strong> — Adjusting strategies based on the evolving dynamics of the game.</li>
     </ul>
-    <h5>Offensive Movement</h5>
+    <h4>Offensive Movement</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Creating Space</strong> — Making runs to open up space for teammates.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Supporting Attacks</strong> — Positioning oneself to provide passing options.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Combination Play</strong> — Linking up with teammates through effective passing sequences.</li>
     </ul>
-    <h5>Defensive Skills</h5>
+    <h4>Defensive Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Marking</strong> — Staying close to opponents to prevent them from receiving or passing the ball.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Tackling</strong> — Executing clean and effective tackles to regain possession.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Interceptions</strong> — Anticipating passes and intercepting them before they reach their target.</li>
     </ul>
-    <h5>Set Pieces</h5>
+    <h4>Set Pieces</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Taking Set Pieces</strong> — Delivering accurate corners, free kicks, and throw-ins.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Defending Set Pieces</strong> — Organizing defensive formations to minimize opposition threats.</li>
     </ul>
-    <h5>Reading the Game</h5>
+    <h4>Reading the Game</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Anticipation</strong> — Predicting opponents&#x27; movements and decision-making.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Game Understanding</strong> — Recognizing patterns and trends during a match.</li>
     </ul>
-    <h5>Awareness</h5>
+    <h4>Awareness</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>360-Degree Awareness</strong> — Keeping track of the ball, teammates, and opponents simultaneously.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Spatial Awareness</strong> — Understanding positioning in relation to the playing field.</li>
     </ul>
-    <h5>Analytical Skills</h5>
+    <h4>Analytical Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Quick Analysis</strong> — Rapidly assessing situations and making informed decisions.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Strategic Thinking</strong> — Understanding the broader strategic aspects of the game.</li>
     </ul>
-    <h4>3. Physical Fitness</h4>
-    <h5>Endurance</h5>
+    <h3>3. Physical Fitness</h3>
+    <h4>Endurance</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Cardiovascular Fitness</strong> — Building stamina for sustained performance throughout the match.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Recovery</strong> — Quick recovery between sprints and intense efforts.</li>
     </ul>
-    <h5>Speed</h5>
+    <h4>Speed</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Acceleration</strong> — Rapidly reaching top speed from a stationary position.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Sprinting</strong> — Maintaining high-speed runs over short distances.</li>
     </ul>
-    <h5>Strength</h5>
+    <h4>Strength</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Core Strength</strong> — Stability and power generation through the core.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Physical Duels</strong> — Winning battles for possession through strength and balance.</li>
     </ul>
-    <h5>Agility</h5>
+    <h4>Agility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Quick Changes of Direction</strong> — Nimbly navigating through tight spaces.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Agile Movements</strong> — Sharp and responsive movements to outmaneuver opponents.</li>
     </ul>
-    <h5>Flexibility</h5>
+    <h4>Flexibility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Preventing Injuries</strong> — Incorporating stretching routines to enhance flexibility and reduce injury risk.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Mobility</strong> — Ensuring a full range of motion for optimal performance.</li>
     </ul>
-    <h4>4. Mental Attributes</h4>
-    <h5>Focus</h5>
+    <h3>4. Mental Attributes</h3>
+    <h4>Focus</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Concentration</strong> — Staying focused on the game, opponents, and strategy for the entire match.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Blocking Distractions</strong> — Managing external factors to maintain mental clarity.</li>
     </ul>
-    <h5>Composure</h5>
+    <h4>Composure</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Calm Under Pressure</strong> — Making sound decisions in high-pressure situations.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Handling Mistakes</strong> — Bouncing back from errors with composure and resilience.</li>
     </ul>
-    <h5>Leadership</h5>
+    <h4>Leadership</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Guiding Teammates</strong> — Vocal communication and directing teammates on the field.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Leading by Example</strong> — Demonstrating a strong work ethic and commitment to excellence.</li>
     </ul>
-    <h5>Adaptability</h5>
+    <h4>Adaptability</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Adjusting to Opponents</strong> — Quickly adapting strategies based on the strengths and weaknesses of the opposition.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Positional Flexibility</strong> — Being adaptable to different roles and positions within the team.</li>
     </ul>
-    <h5>Competitive Spirit</h5>
+    <h4>Competitive Spirit</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Positive Mindset</strong> — Maintaining a competitive edge with a positive and determined mindset.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Winning Mentality</strong> — Striving for success and victory in every match.</li>
     </ul>
-    <h4>5. Teamwork and Communication</h4>
-    <h5>Communication Skills</h5>
+    <h3>5. Teamwork and Communication</h3>
+    <h4>Communication Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Clear Communication</strong> — Articulating instructions and information concisely.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>On-Field Communication</strong> — Constant communication with teammates to coordinate movements.</li>
     </ul>
-    <h5>Collaboration</h5>
+    <h4>Collaboration</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Understanding Roles</strong> — Grasping individual responsibilities within team structures.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Interconnected Play</strong> — Developing synergy with teammates for effective collaboration.</li>
     </ul>
-    <h5>Supporting Teammates</h5>
+    <h4>Supporting Teammates</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Team Cohesion</strong> — Fostering a sense of unity and support among teammates.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Encouragement</strong> — Providing positive reinforcement and support during challenges.</li>
     </ul>
-    <h5>Understanding Roles</h5>
+    <h4>Understanding Roles</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Team Formation</strong> — Grasping the overall strategy and individual roles within the team.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Executing Team Tactics</strong> — Implementing team-specific strategies during matches.</li>
     </ul>
   </div></details>
   <details class="std-band"><summary>Ages 11–13</summary><div class="band-body">
-    <h4>1. Technical Skills</h4>
-    <h5>Ball Control</h5>
+    <h3>1. Technical Skills</h3>
+    <h4>Ball Control</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Dribbling</strong> — Maneuvering the ball with close ball control using various parts of the foot.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Shielding</strong> — Using body positioning to protect the ball from defenders.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Close Control</strong> — Executing precise touches to keep the ball close in tight spaces.</li>
     </ul>
-    <h5>Passing/First Touch</h5>
+    <h4>Passing/First Touch</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Short Passes</strong> — Quick and accurate passes to teammates in close proximity.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Long Passes</strong> — Distributing the ball over longer distances with precision.</li>
@@ -566,152 +584,152 @@
       <li><span class="lvl lvl-competent">Competent</span><strong>First Touch</strong> — Mastering the art of controlling the ball upon receiving it, setting the stage for the next move.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Aerial First Touch</strong> — Controlled ball handling in mid-air situations.</li>
     </ul>
-    <h5>Shooting</h5>
+    <h4>Shooting</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Finishing</strong> — Scoring goals with accuracy using both feet.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Volleys</strong> — Striking the ball cleanly while it&#x27;s in mid-air.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Long-range Shooting</strong> — Developing the ability to score from outside the box.</li>
     </ul>
-    <h5>Heading</h5>
+    <h4>Heading</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-novice">Novice</span><strong>Aerial Duels</strong> — Winning battles in the air, both defensively and offensively.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Directional Heading</strong> — Redirecting the ball accurately to a specific area.</li>
       <li><span class="lvl lvl-novice">Novice</span><strong>Timing</strong> — Anticipating the flight of the ball for well-timed headers.</li>
     </ul>
-    <h5>1v1 Skills</h5>
+    <h4>1v1 Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Skill Moves</strong> — Utilizing effective one-on-one moves to beat defenders.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Change of Direction</strong> — Swift changes in direction to outmaneuver opponents.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Acceleration</strong> — Quick bursts of speed to leave defenders behind.</li>
     </ul>
-    <h4>2. Tactical Awareness</h4>
-    <h5>Positional Play</h5>
+    <h3>2. Tactical Awareness</h3>
+    <h4>Positional Play</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Understanding Formations</strong> — Grasping the tactical implications of different team formations.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Occupying Space</strong> — Maintaining optimal positions relative to teammates and opponents.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Transitioning</strong> — Smoothly shifting between offensive and defensive roles.</li>
     </ul>
-    <h5>Decision-Making</h5>
+    <h4>Decision-Making</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Quick Thinking</strong> — Rapidly assessing options and choosing the best course of action.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Risk Assessment</strong> — Knowing when to take calculated risks and when to play it safe.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Adaptability</strong> — Adjusting strategies based on the evolving dynamics of the game.</li>
     </ul>
-    <h5>Offensive Movement</h5>
+    <h4>Offensive Movement</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Creating Space</strong> — Making runs to open up space for teammates.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Supporting Attacks</strong> — Positioning oneself to provide passing options.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Combination Play</strong> — Linking up with teammates through effective passing sequences.</li>
     </ul>
-    <h5>Defensive Skills</h5>
+    <h4>Defensive Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Marking</strong> — Staying close to opponents to prevent them from receiving or passing the ball.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Tackling</strong> — Executing clean and effective tackles to regain possession.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Interceptions</strong> — Anticipating passes and intercepting them before they reach their target.</li>
     </ul>
-    <h5>Set Pieces</h5>
+    <h4>Set Pieces</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Taking Set Pieces</strong> — Delivering accurate corners, free kicks, and throw-ins.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Defending Set Pieces</strong> — Organizing defensive formations to minimize opposition threats.</li>
     </ul>
-    <h5>Reading the Game</h5>
+    <h4>Reading the Game</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Anticipation</strong> — Predicting opponents&#x27; movements and decision-making.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Game Understanding</strong> — Recognizing patterns and trends during a match.</li>
     </ul>
-    <h5>Awareness</h5>
+    <h4>Awareness</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>360-Degree Awareness</strong> — Keeping track of the ball, teammates, and opponents simultaneously.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Spatial Awareness</strong> — Understanding positioning in relation to the playing field.</li>
     </ul>
-    <h5>Analytical Skills</h5>
+    <h4>Analytical Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Quick Analysis</strong> — Rapidly assessing situations and making informed decisions.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Strategic Thinking</strong> — Understanding the broader strategic aspects of the game.</li>
     </ul>
-    <h4>3. Physical Fitness</h4>
-    <h5>Endurance</h5>
+    <h3>3. Physical Fitness</h3>
+    <h4>Endurance</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Cardiovascular Fitness</strong> — Building stamina for sustained performance throughout the match.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Recovery</strong> — Quick recovery between sprints and intense efforts.</li>
     </ul>
-    <h5>Speed</h5>
+    <h4>Speed</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Acceleration</strong> — Rapidly reaching top speed from a stationary position.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Sprinting</strong> — Maintaining high-speed runs over short distances.</li>
     </ul>
-    <h5>Strength</h5>
+    <h4>Strength</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Core Strength</strong> — Stability and power generation through the core.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Physical Duels</strong> — Winning battles for possession through strength and balance.</li>
     </ul>
-    <h5>Agility</h5>
+    <h4>Agility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Quick Changes of Direction</strong> — Nimbly navigating through tight spaces.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Agile Movements</strong> — Sharp and responsive movements to outmaneuver opponents.</li>
     </ul>
-    <h5>Flexibility</h5>
+    <h4>Flexibility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-competent">Competent</span><strong>Preventing Injuries</strong> — Incorporating stretching routines to enhance flexibility and reduce injury risk.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Mobility</strong> — Ensuring a full range of motion for optimal performance.</li>
     </ul>
-    <h4>4. Mental Attributes</h4>
-    <h5>Focus</h5>
+    <h3>4. Mental Attributes</h3>
+    <h4>Focus</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Concentration</strong> — Staying focused on the game, opponents, and strategy for the entire match.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Blocking Distractions</strong> — Managing external factors to maintain mental clarity.</li>
     </ul>
-    <h5>Composure</h5>
+    <h4>Composure</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Calm Under Pressure</strong> — Making sound decisions in high-pressure situations.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Handling Mistakes</strong> — Bouncing back from errors with composure and resilience.</li>
     </ul>
-    <h5>Leadership</h5>
+    <h4>Leadership</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Guiding Teammates</strong> — Vocal communication and directing teammates on the field.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Leading by Example</strong> — Demonstrating a strong work ethic and commitment to excellence.</li>
     </ul>
-    <h5>Adaptability</h5>
+    <h4>Adaptability</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Adjusting to Opponents</strong> — Quickly adapting strategies based on the strengths and weaknesses of the opposition.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Positional Flexibility</strong> — Being adaptable to different roles and positions within the team.</li>
     </ul>
-    <h5>Competitive Spirit</h5>
+    <h4>Competitive Spirit</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Positive Mindset</strong> — Maintaining a competitive edge with a positive and determined mindset.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Winning Mentality</strong> — Striving for success and victory in every match.</li>
     </ul>
-    <h4>5. Teamwork and Communication</h4>
-    <h5>Communication Skills</h5>
+    <h3>5. Teamwork and Communication</h3>
+    <h4>Communication Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Clear Communication</strong> — Articulating instructions and information concisely.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>On-Field Communication</strong> — Constant communication with teammates to coordinate movements.</li>
     </ul>
-    <h5>Collaboration</h5>
+    <h4>Collaboration</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Understanding Roles</strong> — Grasping individual responsibilities within team structures.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Interconnected Play</strong> — Developing synergy with teammates for effective collaboration.</li>
     </ul>
-    <h5>Supporting Teammates</h5>
+    <h4>Supporting Teammates</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Team Cohesion</strong> — Fostering a sense of unity and support among teammates.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Encouragement</strong> — Providing positive reinforcement and support during challenges.</li>
     </ul>
-    <h5>Understanding Roles</h5>
+    <h4>Understanding Roles</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Team Formation</strong> — Grasping the overall strategy and individual roles within the team.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Executing Team Tactics</strong> — Implementing team-specific strategies during matches.</li>
     </ul>
   </div></details>
   <details class="std-band"><summary>Ages 14–16</summary><div class="band-body">
-    <h4>1. Technical Skills</h4>
-    <h5>Ball Control</h5>
+    <h3>1. Technical Skills</h3>
+    <h4>Ball Control</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Dribbling</strong> — Maneuvering the ball with close ball control using various parts of the foot.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Shielding</strong> — Using body positioning to protect the ball from defenders.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Close Control</strong> — Executing precise touches to keep the ball close in tight spaces.</li>
     </ul>
-    <h5>Passing/First Touch</h5>
+    <h4>Passing/First Touch</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Short Passes</strong> — Quick and accurate passes to teammates in close proximity.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Long Passes</strong> — Distributing the ball over longer distances with precision.</li>
@@ -719,152 +737,152 @@
       <li><span class="lvl lvl-proficient">Proficient</span><strong>First Touch</strong> — Mastering the art of controlling the ball upon receiving it, setting the stage for the next move.</li>
       <li><span class="lvl lvl-competent">Competent</span><strong>Aerial First Touch</strong> — Controlled ball handling in mid-air situations.</li>
     </ul>
-    <h5>Shooting</h5>
+    <h4>Shooting</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Finishing</strong> — Scoring goals with accuracy using both feet.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Volleys</strong> — Striking the ball cleanly while it&#x27;s in mid-air.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Long-range Shooting</strong> — Developing the ability to score from outside the box.</li>
     </ul>
-    <h5>Heading</h5>
+    <h4>Heading</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Aerial Duels</strong> — Winning battles in the air, both defensively and offensively.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Directional Heading</strong> — Redirecting the ball accurately to a specific area.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Timing</strong> — Anticipating the flight of the ball for well-timed headers.</li>
     </ul>
-    <h5>1v1 Skills</h5>
+    <h4>1v1 Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Skill Moves</strong> — Utilizing effective one-on-one moves to beat defenders.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Change of Direction</strong> — Swift changes in direction to outmaneuver opponents.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Acceleration</strong> — Quick bursts of speed to leave defenders behind.</li>
     </ul>
-    <h4>2. Tactical Awareness</h4>
-    <h5>Positional Play</h5>
+    <h3>2. Tactical Awareness</h3>
+    <h4>Positional Play</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Understanding Formations</strong> — Grasping the tactical implications of different team formations.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Occupying Space</strong> — Maintaining optimal positions relative to teammates and opponents.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Transitioning</strong> — Smoothly shifting between offensive and defensive roles.</li>
     </ul>
-    <h5>Decision-Making</h5>
+    <h4>Decision-Making</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Quick Thinking</strong> — Rapidly assessing options and choosing the best course of action.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Risk Assessment</strong> — Knowing when to take calculated risks and when to play it safe.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Adaptability</strong> — Adjusting strategies based on the evolving dynamics of the game.</li>
     </ul>
-    <h5>Offensive Movement</h5>
+    <h4>Offensive Movement</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Creating Space</strong> — Making runs to open up space for teammates.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Supporting Attacks</strong> — Positioning oneself to provide passing options.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Combination Play</strong> — Linking up with teammates through effective passing sequences.</li>
     </ul>
-    <h5>Defensive Skills</h5>
+    <h4>Defensive Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Marking</strong> — Staying close to opponents to prevent them from receiving or passing the ball.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Tackling</strong> — Executing clean and effective tackles to regain possession.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Interceptions</strong> — Anticipating passes and intercepting them before they reach their target.</li>
     </ul>
-    <h5>Set Pieces</h5>
+    <h4>Set Pieces</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Taking Set Pieces</strong> — Delivering accurate corners, free kicks, and throw-ins.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Defending Set Pieces</strong> — Organizing defensive formations to minimize opposition threats.</li>
     </ul>
-    <h5>Reading the Game</h5>
+    <h4>Reading the Game</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Anticipation</strong> — Predicting opponents&#x27; movements and decision-making.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Game Understanding</strong> — Recognizing patterns and trends during a match.</li>
     </ul>
-    <h5>Awareness</h5>
+    <h4>Awareness</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>360-Degree Awareness</strong> — Keeping track of the ball, teammates, and opponents simultaneously.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Spatial Awareness</strong> — Understanding positioning in relation to the playing field.</li>
     </ul>
-    <h5>Analytical Skills</h5>
+    <h4>Analytical Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Quick Analysis</strong> — Rapidly assessing situations and making informed decisions.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Strategic Thinking</strong> — Understanding the broader strategic aspects of the game.</li>
     </ul>
-    <h4>3. Physical Fitness</h4>
-    <h5>Endurance</h5>
+    <h3>3. Physical Fitness</h3>
+    <h4>Endurance</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Cardiovascular Fitness</strong> — Building stamina for sustained performance throughout the match.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Recovery</strong> — Quick recovery between sprints and intense efforts.</li>
     </ul>
-    <h5>Speed</h5>
+    <h4>Speed</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Acceleration</strong> — Rapidly reaching top speed from a stationary position.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Sprinting</strong> — Maintaining high-speed runs over short distances.</li>
     </ul>
-    <h5>Strength</h5>
+    <h4>Strength</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Core Strength</strong> — Stability and power generation through the core.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Physical Duels</strong> — Winning battles for possession through strength and balance.</li>
     </ul>
-    <h5>Agility</h5>
+    <h4>Agility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Quick Changes of Direction</strong> — Nimbly navigating through tight spaces.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Agile Movements</strong> — Sharp and responsive movements to outmaneuver opponents.</li>
     </ul>
-    <h5>Flexibility</h5>
+    <h4>Flexibility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Preventing Injuries</strong> — Incorporating stretching routines to enhance flexibility and reduce injury risk.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Mobility</strong> — Ensuring a full range of motion for optimal performance.</li>
     </ul>
-    <h4>4. Mental Attributes</h4>
-    <h5>Focus</h5>
+    <h3>4. Mental Attributes</h3>
+    <h4>Focus</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Concentration</strong> — Staying focused on the game, opponents, and strategy for the entire match.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Blocking Distractions</strong> — Managing external factors to maintain mental clarity.</li>
     </ul>
-    <h5>Composure</h5>
+    <h4>Composure</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Calm Under Pressure</strong> — Making sound decisions in high-pressure situations.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Handling Mistakes</strong> — Bouncing back from errors with composure and resilience.</li>
     </ul>
-    <h5>Leadership</h5>
+    <h4>Leadership</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Guiding Teammates</strong> — Vocal communication and directing teammates on the field.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Leading by Example</strong> — Demonstrating a strong work ethic and commitment to excellence.</li>
     </ul>
-    <h5>Adaptability</h5>
+    <h4>Adaptability</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Adjusting to Opponents</strong> — Quickly adapting strategies based on the strengths and weaknesses of the opposition.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Positional Flexibility</strong> — Being adaptable to different roles and positions within the team.</li>
     </ul>
-    <h5>Competitive Spirit</h5>
+    <h4>Competitive Spirit</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Positive Mindset</strong> — Maintaining a competitive edge with a positive and determined mindset.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Winning Mentality</strong> — Striving for success and victory in every match.</li>
     </ul>
-    <h4>5. Teamwork and Communication</h4>
-    <h5>Communication Skills</h5>
+    <h3>5. Teamwork and Communication</h3>
+    <h4>Communication Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Clear Communication</strong> — Articulating instructions and information concisely.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>On-Field Communication</strong> — Constant communication with teammates to coordinate movements.</li>
     </ul>
-    <h5>Collaboration</h5>
+    <h4>Collaboration</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Understanding Roles</strong> — Grasping individual responsibilities within team structures.</li>
       <li><span class="lvl lvl-proficient">Proficient</span><strong>Interconnected Play</strong> — Developing synergy with teammates for effective collaboration.</li>
     </ul>
-    <h5>Supporting Teammates</h5>
+    <h4>Supporting Teammates</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Team Cohesion</strong> — Fostering a sense of unity and support among teammates.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Encouragement</strong> — Providing positive reinforcement and support during challenges.</li>
     </ul>
-    <h5>Understanding Roles</h5>
+    <h4>Understanding Roles</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Team Formation</strong> — Grasping the overall strategy and individual roles within the team.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Executing Team Tactics</strong> — Implementing team-specific strategies during matches.</li>
     </ul>
   </div></details>
   <details class="std-band"><summary>Ages 17–19</summary><div class="band-body">
-    <h4>1. Technical Skills</h4>
-    <h5>Ball Control</h5>
+    <h3>1. Technical Skills</h3>
+    <h4>Ball Control</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Dribbling</strong> — Maneuvering the ball with close ball control using various parts of the foot.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Shielding</strong> — Using body positioning to protect the ball from defenders.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Close Control</strong> — Executing precise touches to keep the ball close in tight spaces.</li>
     </ul>
-    <h5>Passing/First Touch</h5>
+    <h4>Passing/First Touch</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Short Passes</strong> — Quick and accurate passes to teammates in close proximity.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Long Passes</strong> — Distributing the ball over longer distances with precision.</li>
@@ -872,138 +890,138 @@
       <li><span class="lvl lvl-expert">Expert</span><strong>First Touch</strong> — Mastering the art of controlling the ball upon receiving it, setting the stage for the next move.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Aerial First Touch</strong> — Controlled ball handling in mid-air situations.</li>
     </ul>
-    <h5>Shooting</h5>
+    <h4>Shooting</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Finishing</strong> — Scoring goals with accuracy using both feet.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Volleys</strong> — Striking the ball cleanly while it&#x27;s in mid-air.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Long-range Shooting</strong> — Developing the ability to score from outside the box.</li>
     </ul>
-    <h5>Heading</h5>
+    <h4>Heading</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Aerial Duels</strong> — Winning battles in the air, both defensively and offensively.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Directional Heading</strong> — Redirecting the ball accurately to a specific area.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Timing</strong> — Anticipating the flight of the ball for well-timed headers.</li>
     </ul>
-    <h5>1v1 Skills</h5>
+    <h4>1v1 Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Skill Moves</strong> — Utilizing effective one-on-one moves to beat defenders.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Change of Direction</strong> — Swift changes in direction to outmaneuver opponents.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Acceleration</strong> — Quick bursts of speed to leave defenders behind.</li>
     </ul>
-    <h4>2. Tactical Awareness</h4>
-    <h5>Positional Play</h5>
+    <h3>2. Tactical Awareness</h3>
+    <h4>Positional Play</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Understanding Formations</strong> — Grasping the tactical implications of different team formations.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Occupying Space</strong> — Maintaining optimal positions relative to teammates and opponents.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Transitioning</strong> — Smoothly shifting between offensive and defensive roles.</li>
     </ul>
-    <h5>Decision-Making</h5>
+    <h4>Decision-Making</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Quick Thinking</strong> — Rapidly assessing options and choosing the best course of action.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Risk Assessment</strong> — Knowing when to take calculated risks and when to play it safe.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Adaptability</strong> — Adjusting strategies based on the evolving dynamics of the game.</li>
     </ul>
-    <h5>Offensive Movement</h5>
+    <h4>Offensive Movement</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Creating Space</strong> — Making runs to open up space for teammates.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Supporting Attacks</strong> — Positioning oneself to provide passing options.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Combination Play</strong> — Linking up with teammates through effective passing sequences.</li>
     </ul>
-    <h5>Defensive Skills</h5>
+    <h4>Defensive Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Marking</strong> — Staying close to opponents to prevent them from receiving or passing the ball.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Tackling</strong> — Executing clean and effective tackles to regain possession.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Interceptions</strong> — Anticipating passes and intercepting them before they reach their target.</li>
     </ul>
-    <h5>Set Pieces</h5>
+    <h4>Set Pieces</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Taking Set Pieces</strong> — Delivering accurate corners, free kicks, and throw-ins.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Defending Set Pieces</strong> — Organizing defensive formations to minimize opposition threats.</li>
     </ul>
-    <h5>Reading the Game</h5>
+    <h4>Reading the Game</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Anticipation</strong> — Predicting opponents&#x27; movements and decision-making.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Game Understanding</strong> — Recognizing patterns and trends during a match.</li>
     </ul>
-    <h5>Awareness</h5>
+    <h4>Awareness</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>360-Degree Awareness</strong> — Keeping track of the ball, teammates, and opponents simultaneously.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Spatial Awareness</strong> — Understanding positioning in relation to the playing field.</li>
     </ul>
-    <h5>Analytical Skills</h5>
+    <h4>Analytical Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Quick Analysis</strong> — Rapidly assessing situations and making informed decisions.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Strategic Thinking</strong> — Understanding the broader strategic aspects of the game.</li>
     </ul>
-    <h4>3. Physical Fitness</h4>
-    <h5>Endurance</h5>
+    <h3>3. Physical Fitness</h3>
+    <h4>Endurance</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Cardiovascular Fitness</strong> — Building stamina for sustained performance throughout the match.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Recovery</strong> — Quick recovery between sprints and intense efforts.</li>
     </ul>
-    <h5>Speed</h5>
+    <h4>Speed</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Acceleration</strong> — Rapidly reaching top speed from a stationary position.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Sprinting</strong> — Maintaining high-speed runs over short distances.</li>
     </ul>
-    <h5>Strength</h5>
+    <h4>Strength</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Core Strength</strong> — Stability and power generation through the core.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Physical Duels</strong> — Winning battles for possession through strength and balance.</li>
     </ul>
-    <h5>Agility</h5>
+    <h4>Agility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Quick Changes of Direction</strong> — Nimbly navigating through tight spaces.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Agile Movements</strong> — Sharp and responsive movements to outmaneuver opponents.</li>
     </ul>
-    <h5>Flexibility</h5>
+    <h4>Flexibility</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Preventing Injuries</strong> — Incorporating stretching routines to enhance flexibility and reduce injury risk.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Mobility</strong> — Ensuring a full range of motion for optimal performance.</li>
     </ul>
-    <h4>4. Mental Attributes</h4>
-    <h5>Focus</h5>
+    <h3>4. Mental Attributes</h3>
+    <h4>Focus</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Concentration</strong> — Staying focused on the game, opponents, and strategy for the entire match.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Blocking Distractions</strong> — Managing external factors to maintain mental clarity.</li>
     </ul>
-    <h5>Composure</h5>
+    <h4>Composure</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Calm Under Pressure</strong> — Making sound decisions in high-pressure situations.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Handling Mistakes</strong> — Bouncing back from errors with composure and resilience.</li>
     </ul>
-    <h5>Leadership</h5>
+    <h4>Leadership</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Guiding Teammates</strong> — Vocal communication and directing teammates on the field.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Leading by Example</strong> — Demonstrating a strong work ethic and commitment to excellence.</li>
     </ul>
-    <h5>Adaptability</h5>
+    <h4>Adaptability</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Adjusting to Opponents</strong> — Quickly adapting strategies based on the strengths and weaknesses of the opposition.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Positional Flexibility</strong> — Being adaptable to different roles and positions within the team.</li>
     </ul>
-    <h5>Competitive Spirit</h5>
+    <h4>Competitive Spirit</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Positive Mindset</strong> — Maintaining a competitive edge with a positive and determined mindset.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Winning Mentality</strong> — Striving for success and victory in every match.</li>
     </ul>
-    <h4>5. Teamwork and Communication</h4>
-    <h5>Communication Skills</h5>
+    <h3>5. Teamwork and Communication</h3>
+    <h4>Communication Skills</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Clear Communication</strong> — Articulating instructions and information concisely.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>On-Field Communication</strong> — Constant communication with teammates to coordinate movements.</li>
     </ul>
-    <h5>Collaboration</h5>
+    <h4>Collaboration</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Understanding Roles</strong> — Grasping individual responsibilities within team structures.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Interconnected Play</strong> — Developing synergy with teammates for effective collaboration.</li>
     </ul>
-    <h5>Supporting Teammates</h5>
+    <h4>Supporting Teammates</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Team Cohesion</strong> — Fostering a sense of unity and support among teammates.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Encouragement</strong> — Providing positive reinforcement and support during challenges.</li>
     </ul>
-    <h5>Understanding Roles</h5>
+    <h4>Understanding Roles</h4>
     <ul class="std-list">
       <li><span class="lvl lvl-expert">Expert</span><strong>Team Formation</strong> — Grasping the overall strategy and individual roles within the team.</li>
       <li><span class="lvl lvl-expert">Expert</span><strong>Executing Team Tactics</strong> — Implementing team-specific strategies during matches.</li>
@@ -1011,6 +1029,7 @@
   </div></details>
 </section>
 
+  </main>
 <footer>
   <div class="inner">
     <h2>VENTURA FOOTBALL CLUB</h2>

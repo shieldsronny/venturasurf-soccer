@@ -168,9 +168,9 @@
   .std-band summary::after { content: "+"; color: var(--surf-blue); font-size: 1.6rem; font-weight: 700; }
   .std-band[open] summary::after { content: "3"; }
   .std-band .band-body { padding: 0.4rem 1.2rem 1.2rem; }
-  .std-band h4 { margin: 1.1rem 0 0.2rem; color: var(--surf-blue); font-family: "Barlow Condensed", sans-serif;
+  .std-band h3 { margin: 1.1rem 0 0.2rem; color: var(--surf-blue); font-family: "Barlow Condensed", sans-serif;
                  font-size: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
-  .std-band h5 { margin: 0.8rem 0 0.2rem; font-size: 0.98rem; color: var(--blue-deep); }
+  .std-band h4 { margin: 0.8rem 0 0.2rem; font-size: 0.98rem; color: var(--blue-deep); }
   .std-list { list-style: none; }
   .std-list li { padding: 0.32rem 0; border-bottom: 1px dashed var(--line); color: var(--muted); font-size: 0.95rem; }
   .std-list li:last-child { border-bottom: 0; }
@@ -181,6 +181,22 @@
   .lvl-competent { background: #bcd2ec; color: #1d4076; }
   .lvl-proficient { background: var(--surf-blue); color: #fff; }
   .lvl-expert { background: var(--blue-deep); color: #fff; }
+
+  /* ---------- Accessibility ---------- */
+  .skip-link { position: absolute; left: 1rem; top: -4rem; z-index: 200; background: var(--blue-deep); color: #fff;
+               padding: 0.6rem 1.1rem; border-radius: 0 0 10px 10px; font-weight: 700; transition: top 0.2s ease; }
+  .skip-link:focus { top: 0; }
+  :focus-visible { outline: 3px solid var(--surf-blue); outline-offset: 2px; }
+  .site-nav a:focus-visible, .gate button:focus-visible, .gate input:focus-visible,
+  .pillars-band a:focus-visible, footer a:focus-visible { outline-color: #fff; }
+  footer a { text-decoration: underline; }
+  .gate-label { display: block; text-align: left; margin: 0 0 6px; font-weight: 600; color: #d7e3f2; font-size: 0.95rem; }
+  .gate-card-title { font-family: "Barlow Condensed", sans-serif; font-size: 2rem; font-weight: 700;
+                     text-transform: uppercase; letter-spacing: 0.04em; margin: 0 0 0.4rem; color: #fff; }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+    html { scroll-behavior: auto; }
+  }
 
   /* ---------- Mobile ---------- */
   img { max-width: 100%; }
@@ -211,17 +227,19 @@
 </style>
 </head>
 <body class="locked">
+  <a class="skip-link" href="#main">Skip to main content</a>
 <div class="gate" id="gate">
   <div class="gate-card">
-    <h2>Ventura Surf Player Hub</h2>
+    <p class="gate-card-title">Ventura Surf Player Hub</p>
     <p>This hub is for Ventura Surf players and families. Enter the password to continue.</p>
+    <label class="gate-label" for="gatePw">Password</label>
     <input type="password" id="gatePw" placeholder="Password" autocomplete="current-password">
     <button id="gateBtn" type="button">Enter</button>
-    <div class="gate-err" id="gateErr"></div>
+    <div class="gate-err" id="gateErr" role="alert"></div>
   </div>
 </div>
 
-<nav class="site-nav">
+<nav class="site-nav" aria-label="Main">
   <span class="brand-wrap"><img class="nav-shield" src="assets/shield.png" alt="Ventura Surf Soccer Club shield"></span>
   <div class="tabs">
     <a href="index.html">Home</a>
@@ -231,6 +249,7 @@
     <a href="https://venturasurfsoccer.com/join">Join Us</a>
   </div>
 </nav>
+  <main id="main">
 
 <header class="hero">
   <div class="hero-text">
@@ -326,6 +345,7 @@
   </div>
 
 </section>
+  </main>
 <footer>
   <div class="inner">
     <h2>VENTURA FOOTBALL CLUB</h2>
