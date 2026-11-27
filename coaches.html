@@ -117,6 +117,8 @@
 
   /* ---------- Link cards (coaches) ---------- */
   .link-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+  .ideas-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+  .ideas-grid .link-card { flex: 1 1 230px; max-width: 320px; }
   .link-card { background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--surf-blue); border-radius: 14px;
                padding: 1.25rem 1.2rem; box-shadow: var(--shadow); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .link-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
@@ -311,7 +313,7 @@
 <section>
   <h2>Session Ideas by Age Group</h2>
   <p>One club, one weekly focus — but it should look different at every age. Here's how to run this week's theme (check the Coaching Focus above) with your group, U5 through U19.</p>
-  <div class="link-cards">
+  <div class="link-cards ideas-grid">
     <div class="link-card">
       <h3>U5–U7 — FUNdamentals</h3>
       <p><strong>The theme at this age:</strong> "Running with the ball" is just dribbling with big touches into open space. No patterns yet — every player with a ball, moving the whole time.</p>
@@ -352,7 +354,7 @@
 <section>
   <h2>Player of the Month — November Nominations</h2>
   <p>Nominate a player for November Player of the Month. Winners are announced in the Player Hub in the four sections — Older Boys, Older Girls, Younger Boys, Younger Girls. Tell us who stood out this month, on and off the field, and add a photo if you have one. The club confirms parent/guardian consent before posting any winner's name or photo publicly.</p>
-  <p><a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc4TaggcTWFIXsjUoHTZVf29ai7oiOnu5kdwldQ1y0RY2lUCg/viewform" target="_blank" rel="noopener">Nominate a Player</a></p>
+  <p style="text-align: center;"><a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSc4TaggcTWFIXsjUoHTZVf29ai7oiOnu5kdwldQ1y0RY2lUCg/viewform" target="_blank" rel="noopener">Nominate a Player</a></p>
 </section>
 <section>
   <h2>Curriculum &amp; Standards</h2>

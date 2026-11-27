@@ -117,6 +117,8 @@
 
   /* ---------- Link cards (coaches) ---------- */
   .link-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+  .ideas-grid { display: flex; flex-wrap: wrap; justify-content: center; }
+  .ideas-grid .link-card { flex: 1 1 230px; max-width: 320px; }
   .link-card { background: #fff; border: 1px solid var(--line); border-top: 5px solid var(--surf-blue); border-radius: 14px;
                padding: 1.25rem 1.2rem; box-shadow: var(--shadow); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .link-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
